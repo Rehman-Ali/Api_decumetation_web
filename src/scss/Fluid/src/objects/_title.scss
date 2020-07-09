@@ -1,0 +1,18 @@
+//
+// Doc : add Doc
+//
+@if $generate-object-classes {
+  .title {
+    @include fontsize($title-size);
+    color: $title-color;
+    line-height: $title-lineheight;
+
+    &.is-sm {
+      @include fontsize($title-size * $default-small-quantity, true);
+    }
+
+    &.is-lg {
+      @include fontsize($title-size * $default-large-quantity, true);
+    }
+  }
+}

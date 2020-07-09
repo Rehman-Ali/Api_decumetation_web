@@ -1,0 +1,16 @@
+//
+// Border-Size
+//
+
+@if $generate-utility-classes {
+  $config: (
+    properties: border-width,
+    selector: "border",
+    values: (
+      wide: $borderwidth-wide
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

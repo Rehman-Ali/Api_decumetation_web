@@ -1,0 +1,72 @@
+//
+// Border-radius
+//
+
+@if $generate-utility-classes {
+  $config: (
+    properties: border-radius,
+    selector: "is",
+    values: (
+      round: $borderradius-normal,
+      round-sm: $borderradius-small,
+      round-lg: $borderradius-large,
+      circle: $borderradius-circle,
+      pill: $borderradius-pill,
+      box: 0
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+  $config: (
+    properties: border-top-left-radius border-top-right-radius,
+    selector: "is-round",
+    values: (
+      top-sm: $borderradius-small,
+      top: $borderradius-normal,
+      top-lg: $borderradius-large
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+
+  $config: (
+    properties: border-top-right-radius border-bottom-right-radius,
+    selector: "is-round",
+    values: (
+      right-sm: $borderradius-small,
+      right: $borderradius-normal,
+      right-lg: $borderradius-large
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+
+  $config: (
+    properties: border-bottom-right-radius border-bottom-left-radius,
+    selector: "is-round",
+    values: (
+      bottom-sm: $borderradius-small,
+      bottom: $borderradius-normal,
+      bottom-lg: $borderradius-large
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+
+  $config: (
+    properties: border-top-left-radius border-bottom-left-radius,
+    selector: "is-round",
+    values: (
+      left-sm: $borderradius-small,
+      left: $borderradius-normal,
+      left-lg: $borderradius-large
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

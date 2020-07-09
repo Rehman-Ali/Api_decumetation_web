@@ -1,0 +1,9 @@
+%heading {
+  margin-bottom: $headings-marginbottom;
+  color: $headings-color;
+  font-family: $headings-fontfamily;
+  font-weight: $headings-fontweight;
+  font-style: $headings-fontstyle;
+  line-height: $headings-lineheight;
+  @extend %margintop-0; // nuke the top margin for easier control within type scales as it avoids margin collapsing
+}

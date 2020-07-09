@@ -1,0 +1,20 @@
+//
+// Opacity
+//
+
+@if $generate-utility-classes {
+  $SIZES: ();
+
+  @each $key, $value in $sizes {
+    $SIZES: map-merge($SIZES, ($key: strip-unit($value) / 100));
+  }
+
+  $config: (
+    properties: opacity,
+    selector: "o",
+    values: $SIZES,
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

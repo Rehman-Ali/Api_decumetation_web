@@ -1,0 +1,14 @@
+//
+// Readable words
+//
+
+//
+// Setting
+//
+// Map containing readable breakpoints
+$breakpoints-readable: (
+  sm: mobile,
+  md: tablet,
+  lg: desktop,
+  xl: large
+) !default;

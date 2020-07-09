@@ -1,0 +1,18 @@
+//
+// Grid-wrap
+//
+
+@if $generate-utility-classes {
+  $config: (
+    properties: flex-wrap,
+    selector: "flex",
+    values: (
+      wrap: wrap,
+      nowrap: nowrap,
+      wrap-rev: wrap-reverse
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

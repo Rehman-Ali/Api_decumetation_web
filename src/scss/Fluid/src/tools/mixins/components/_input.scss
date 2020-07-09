@@ -1,0 +1,46 @@
+//
+// inputs Mixin
+//
+
+//
+// Theme Variants Mixin
+//
+
+@mixin input-variant($name, $color) {
+  border-color: rgba($color, .5);
+  color: $color;
+
+  @include hover {
+    box-shadow: box-shadow($input-boxshadow-inner, $controls-focus-boxshadow rgba($color, .5));
+  }
+
+  @if $name == "valid" or $name == "info" or $name == "warn" or $name == "error" {
+    &.has-icon {
+      @extend %controls-validation-icon;
+      @if $name == "valid" {
+        background-image: $icon-check;
+      } @else if $name == "info" {
+        background-image: $icon-info;
+      } @else if $name == "warn" {
+        background-image: $icon-warning;
+      } @else if $name == "error" {
+        background-image: $icon-cross;
+      }
+    }
+  }
+
+  .control > & ~ .icon {
+    color: $color;
+  }
+
+  @if $enable-experimental-css {
+    //
+    // Note : Experimental Feature
+    // Issue : Doesn't work on Edge 44
+    // Doc : add doc
+    //
+    .control.has-floating-label > & ~ .label {
+      color: $color;
+    }
+  }
+}

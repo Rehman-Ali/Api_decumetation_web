@@ -1,0 +1,13 @@
+//
+// Doc : add Doc
+//
+@if $generate-object-classes {
+  //
+  // Doc : add Doc
+  //
+  .float {
+    // stylelint-disable-next-line declaration-no-important
+    display: block !important; // override display property (e.g flex) to correctly align child elements
+    @extend .clearfix;
+  }
+}

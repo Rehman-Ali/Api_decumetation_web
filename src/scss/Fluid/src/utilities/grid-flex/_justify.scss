@@ -1,0 +1,21 @@
+//
+// Justify-content
+//
+
+@if $generate-utility-classes {
+  $config: (
+    responsive: true,
+    properties: justify-content,
+    selector: "justify",
+    values: (
+      start: flex-start,
+      center: center,
+      end: flex-end,
+      between: space-between,
+      around: space-around
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

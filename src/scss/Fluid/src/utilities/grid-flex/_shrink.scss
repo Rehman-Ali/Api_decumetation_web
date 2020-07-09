@@ -1,0 +1,17 @@
+//
+// Flex-shrink
+//
+
+@if $generate-utility-classes {
+  $config: (
+    properties: flex-shrink,
+    selector: "flex",
+    values: (
+      shrink: 1,
+      shrink-0: 0
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

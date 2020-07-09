@@ -1,0 +1,21 @@
+@import "../scss/Fluid/src/vendors/vendors";
+@import "../scss/Fluid/src/tools/tools";
+@import "../scss/Fluid/src/settings/settings";
+@import "../scss/Fluid/src/settings/placeholders/prefers-reduced-motion";
+
+.laptop {
+  .slick-slide {
+    > div > div {
+      height: 350px;
+      width: 525px !important;
+      filter: blur(3px);
+      transform: scale(0.8);
+      @include transition(transform 1s, filter 1s);
+    }
+
+    &.slick-current > div > div {
+      transform: scale(1);
+      filter: unset;
+    }
+  }
+}

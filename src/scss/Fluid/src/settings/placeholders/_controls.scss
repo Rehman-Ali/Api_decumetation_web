@@ -1,0 +1,162 @@
+//
+// Placeholders Used for various controls
+//
+
+// Basic styles for normal controls where style are directly applied on elements
+// e.g Button, Group Addon, Input, Textarea, Select, Menu, Range and %controls-label(s) label
+%controls {
+  position: relative;
+  display: inline-block;
+  user-select: none;
+  padding: $controls-padding-y $controls-padding-x;
+  border: $controls-borderwidth solid $controls-bordercolor;
+  border-radius: border-radius($controls-borderradius, 0);
+  background-color: $controls-background;
+  vertical-align: middle;
+  text-decoration: none;
+  font-family: $controls-fontfamily;
+  font-weight: $controls-fontweight;
+  line-height: $controls-lineheight;
+  @include fontsize();
+  @include transition($controls-transition);
+}
+
+// Basic active state styles for normal controls where style are directly applied on elements
+// e.g Button, Group Addon, Input, Textarea, Select and %controls-label(s) label
+%controls-active {
+  @include active {
+    @include animation(none); // disable animations on click event and play again on focus/clickup event
+    box-shadow: box-shadow(none); // no shadow in clicked state
+  }
+}
+
+// Basic hover state styles for normal controls where style are directly applied on elements
+// e.g Button, Group Addon, Textarea, Select and %controls-label(s) label
+%controls-hover {
+  @include hover {
+    box-shadow: box-shadow($controls-focus-boxshadow rgba($controls-theme, .5));
+  }
+}
+
+// Basic focus state styles for normal controls where style are directly applied on elements
+// e.g Button, Group Addon, Input, Textarea, Select and %controls-label(s) label
+%controls-focus {
+  @include focus {
+    @include animation(ripple); // ripple animation on click event
+    outline: 0;
+  }
+}
+
+// Basic styles for controls where style are not directly applied on elements but on their label instead
+// e.g Checkbox, Radio and Switch
+%controls-label {
+  @include active {
+    ~ .label {
+      @include before {
+        opacity: .5;
+      }
+    }
+  }
+
+  &:checked {
+    ~ .label {
+      @include before {
+        border-color: currentColor;
+        background: currentColor;
+        @include animation(none); // disable animations on click event and play again on focus/clickup event
+      }
+    }
+  }
+
+  @include focus {
+    ~ .label {
+      @include before {
+        @include animation(ripple); // ripple animation on click event
+      }
+    }
+  }
+
+  ~ .label {
+    position: relative;
+    cursor: $controls-label-cursor;
+    padding-left: $controls-label-paddingleft;
+    margin-bottom: 0; // override label style inside control
+
+    &:not(:empty) {
+      padding-right: .5rem;
+    }
+
+    @include before {
+      @extend %controls;
+      @extend %controls-active;
+      @extend %controls-hover;
+      @extend %controls-focus;
+
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: $controls-label-before-size;
+      height: $controls-label-before-size;
+      padding: 0; // override %controls padding
+      border-color: $controls-label-bordercolor;
+      color: $controls-color;
+      background-color: $controls-label-background;
+      @include fontsize(inherit); // override %controls font-size
+    }
+  }
+
+  //
+  // Color variants
+  //
+  @each $color, $value in $theme-colors {
+    &.is-#{$color} {
+      ~ .label {
+        @include before {
+          color: $value;
+        }
+      }
+    }
+  }
+
+  @include disabled {
+    ~ .label {
+      // Separate style from %controls-disabled placeholder to Fix : disabled opacity on %controls-label in IE
+      pointer-events: none;
+      opacity: $controls-disabled-opacity;
+      @include before {
+        // stylelint-disable-next-line declaration-no-important
+        color: $controls-theme-light !important;
+      }
+    }
+  }
+}
+
+// Basic styles to hide controls from visual appearance
+// e.g Checkbox, Radio, Switch and File
+%controls-hide {
+  // We set position, z-index and opacity instead of setting display and visibility properties
+  // because they would lead to control being hidden from screen readers and other assistive technologies
+  //
+  // Read more : https://alistapart.com/article/now-you-see-me/
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+// Basic styles for disabled controls
+// e.g Button, Input, Textarea, Select, Menu, Range and %controls-label(s) label
+%controls-disabled {
+  pointer-events: none;
+  opacity: $controls-disabled-opacity;
+}
+
+// Basic styles for showing validation icon on controls using background image
+// e.g Input, Textarea and Select
+%controls-validation-icon {
+  padding-right: $input-icon-padding;
+  background-repeat: no-repeat;
+  background-position: right $input-icon-position-right center;
+  background-size: $input-icon-size $input-icon-size;
+}

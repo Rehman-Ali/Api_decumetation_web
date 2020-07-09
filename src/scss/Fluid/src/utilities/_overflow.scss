@@ -1,0 +1,38 @@
+//
+// Overflow
+//
+
+@if $generate-utility-classes {
+  $config: (
+    properties: overflow,
+    selector: "overflow",
+    values: (
+      scroll,
+      hidden,
+      auto,
+      visible
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+
+  //
+  // Overflow horizontal and vertical
+  //
+
+  $config: (
+    properties: overflow,
+    selector: "overflow",
+    values: (
+      scroll,
+      hidden,
+      auto,
+      visible
+    ),
+    infixes: x y,
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

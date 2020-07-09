@@ -1,0 +1,111 @@
+//
+// Buttons Mixin
+//
+
+//
+// Theme Variants Mixin
+//
+
+// Solid design variant
+@mixin button-design-solid-variant($color) {
+  $focus-background: clr-step($color, -2);
+  $active-background: clr-step($color, 4);
+
+  $active-default: clr-step($button-theme, 4);
+
+  // to avoid adding extra color override
+  // - clr-auto($button-theme) is already inside default is-solid button
+  color: if(clr-auto($color) != clr-auto($button-theme), clr-auto($color), null);
+  @include gradient-background($color, 180deg);
+
+  @include hover {
+    box-shadow: box-shadow($button-focus-boxshadow rgba($color, .5));
+  }
+
+  @include focus {
+    @include gradient-background($focus-background, 180deg);
+  }
+
+  @include active {
+    // to avoid adding extra color override
+    // - clr-auto(clr-step($button-theme, 4)) is already inside default is-solid button
+    color: if(clr-auto($color) != clr-auto($active-default), clr-auto($active-background), null);
+    @if $design-solid-or-gradients == "solid" {
+      background-color: $active-background;
+    }
+  }
+
+  &.is-loading {
+    // to avoid adding extra color override
+    // - clr-auto($button-theme) is already inside default is-solid button
+    @if clr-auto($color) != clr-auto($button-theme) {
+      @include loading-spinner-color(clr-auto($color));
+    }
+  }
+}
+
+// outline design variant
+@mixin button-design-outline-variant($color) {
+  $active-border: clr-step($color, 4);
+
+  @include hover {
+    border-color: $color;
+    box-shadow: box-shadow($button-focus-boxshadow rgba($color, .5));
+  }
+
+  @include focus {
+    color: $color;
+  }
+
+  @include active {
+    color: $active-border;
+  }
+}
+
+@mixin button-design-fillout-variant($color) {
+  $focus-background: clr-step($color, -2);
+  $active-background: clr-step($color, 4);
+  $active-border: clr-step($color, 4);
+  border-color: $color;
+
+  // to avoid adding extra color override
+  // - clr-auto($button-theme) is already inside default is-solid button
+  color: if(clr-auto($color) != clr-auto($button-theme), clr-auto($color), null);
+  @include gradient-background($color, 180deg)
+
+    @include hover {
+    color: $color;
+    box-shadow: box-shadow($button-focus-boxshadow rgba($color, .5));
+  }
+
+  @include focus {
+    color: $color;
+  }
+
+  @include active {
+    color: $active-border;
+  }
+}
+
+// minimal design variant
+@mixin button-design-minimal-variant($color) {
+  $active-border: clr-step($color, 4);
+
+  @include hover-focus {
+    color: $color;
+    @include before {
+      border-bottom-color: $color;
+    }
+  }
+
+  @include active {
+    color: $active-border;
+    @include before {
+      border-bottom-color: $active-border;
+    }
+  }
+
+  &.is-loading {
+    @include loading-spinner-color($color);
+  }
+}

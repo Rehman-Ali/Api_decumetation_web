@@ -1,0 +1,193 @@
+//
+// Group
+//
+// Used to combine various controls together
+
+@if $generate-component-classes {
+  // Group addons
+  .addon {
+    @extend %controls;
+    display: flex; // override %controls style to use align-items
+    user-select: auto; // allow user to select text inside addon
+    align-items: center; // Center align content in addon
+    border-color: $group-addon-bordercolor;
+    background-color: $group-addon-background;
+  }
+
+  //
+  // Base styles
+  //
+  // stylelint-disable-next-line no-duplicate-selectors
+  .group {
+    display: flex;
+    flex-wrap: wrap;
+
+    &.is-lg {
+      > .addon,
+      > .btn {
+        padding: $group-lg-padding-y $group-lg-padding-x;
+      }
+
+      .input {
+        padding-top: $group-lg-padding-y;
+        padding-bottom: $group-lg-padding-y;
+      }
+    }
+
+    > .input,
+    > .control,
+    > .addon,
+    > .btn {
+      @include hover-focus {
+        z-index: $group-items-hover-focus-zindex;
+      }
+    }
+
+    > .input,
+    > .control:not(.addon) {
+      flex: 1 1 0%; // expand to max space available without overflow from group
+    }
+
+    &:not(.is-y) {
+      margin-right: $controls-borderwidth / 2;
+      margin-left: $controls-borderwidth / 2;
+
+      > .control {
+        @extend %group-margin-x;
+
+        > .input {
+          @extend %group-borderradius-0 !optional;
+        }
+
+        &:first-child > .input:not(.is-min) {
+          @extend %group-borderradius-left !optional;
+        }
+
+        &:last-child > .input:not(.is-min) {
+          @extend %group-borderradius-right !optional;
+        }
+      }
+
+      > .input,
+      > .addon,
+      > .btn {
+        @extend %group-margin-x;
+        @extend %group-borderradius-0 !optional;
+
+        &:first-child:not(.is-min) {
+          @extend %group-borderradius-left !optional;
+        }
+
+        &:last-child:not(.is-min) {
+          @extend %group-borderradius-right !optional;
+        }
+      }
+    }
+
+    &.is-y {
+      margin-top: $controls-borderwidth / 2;
+      margin-bottom: $controls-borderwidth / 2;
+
+      > .control {
+        @extend %group-margin-y;
+
+        > .input {
+          @extend %group-borderradius-0 !optional;
+        }
+
+        &:first-child > .input:not(.is-min) {
+          @extend %group-borderradius-top !optional;
+        }
+
+        &:last-child > .input:not(.is-min) {
+          @extend %group-borderradius-bottom !optional;
+        }
+      }
+
+      > .input,
+      > .addon,
+      > .btn {
+        @extend %group-margin-y;
+        @extend %group-borderradius-0 !optional;
+
+        &:first-child:not(.is-min) {
+          @extend %group-borderradius-top !optional;
+        }
+
+        &:last-child:not(.is-min) {
+          @extend %group-borderradius-bottom !optional;
+        }
+      }
+    }
+
+    &.is-borderless {
+      &:not(.is-y) {
+        > .control {
+          > .input {
+            @extend %group-border-y-0;
+            @extend %group-borderradius-0 !optional;
+          }
+
+          &:first-child > .input {
+            @extend %group-border-left-0;
+          }
+
+          &:last-child > .input {
+            @extend %group-border-right-0;
+          }
+        }
+
+        > .input,
+        > .addon,
+        > .btn {
+          @extend %group-border-y-0;
+          @extend %group-borderradius-0 !optional;
+
+          &:first-child {
+            @extend %group-border-left-0;
+          }
+
+          &:last-child {
+            @extend %group-border-right-0;
+          }
+        }
+      }
+
+      &.is-y {
+        > .control {
+          > .input {
+            @extend %group-border-x-0;
+            @extend %group-borderradius-0 !optional;
+          }
+
+          &:first-child > .input {
+            @extend %group-border-top-0;
+          }
+
+          &:last-child > .input {
+            @extend %group-border-bottom-0;
+          }
+        }
+
+        > .input,
+        > .addon,
+        > .btn {
+          @extend %group-border-x-0;
+          @extend %group-borderradius-0 !optional;
+
+          &:first-child {
+            @extend %group-border-top-0;
+          }
+
+          &:last-child {
+            @extend %group-border-bottom-0;
+          }
+        }
+      }
+    }
+  }
+
+  .group.buttons {
+    display: inline-flex; // override display property for buttons group
+  }
+}

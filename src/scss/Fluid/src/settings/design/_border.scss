@@ -1,0 +1,24 @@
+//
+// Borders Settings
+//
+
+//
+// Setting
+//
+$border-color:                    $gray-200 !default;
+
+$borderwidth-normal:              1px !default;
+$borderwidth-wide:                3px !default;
+
+$borderradius-small:              .25em !default;
+$borderradius-normal:             .5em !default;
+$borderradius-large:              1em !default;
+$borderradius-pill:               50em !default;
+$borderradius-circle:             50% !default;
+
+//
+// Derived
+//
+$borderwidth-default:             $borderwidth-normal !default;
+$borderradius-default:            $borderradius-small !default;
+$border-default:                  $borderwidth-default solid $border-color !default;

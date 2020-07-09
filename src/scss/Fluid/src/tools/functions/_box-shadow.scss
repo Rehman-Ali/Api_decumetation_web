@@ -1,0 +1,52 @@
+//
+// Box-Shadow Function
+//
+
+//
+// box-shadow
+// Function optimize and check box-shadow
+//
+// Parameters:
+// {List} $shadows - shadows strings
+@function box-shadow($shadows...) {
+  $first-value: nth($shadows, 1);
+
+  @if length($shadows) == 1 and ($first-value == none or $first-value == null) {
+    @return $shadows;
+  }
+
+  // Filter invalid values
+  // for example `box-shadow: none, 0 0 currentColor` here the "none" causes value to be invalid
+  @if length($shadows) > 1 or ($first-value != none and $first-value != null) {
+    $result: ();
+
+    @each $shadow in $shadows {
+      // ignore none and null value in list with valid values
+      @if $shadow != none and $shadow != null {
+        // if list is supplied as a variable to parameter $shadows
+        @if list-separator($shadow) == comma {
+          @each $sub-shadow in $shadow {
+            // reclusively check each value in list
+            $result: suffix($result, ",") + box-shadow($sub-shadow);
+          }
+          @return $result;
+        }
+
+        @if type-of($shadow) != "list" {
+          @error "invalid type `#{type-of($shadow)}` or value `#{$shadow}` of $shadow inside $shadows `#{shadows}` . Type must be `list` or value must be valid shadow value";
+        }
+
+        $result: suffix($result, ",") + $shadow;
+      }
+    }
+    // if there are some values left after checking
+    @if length($result) > 0 {
+      @return $result;
+    } @else {
+      // after checking and filtering each shadow if the no valid value is found
+      @error "invalid value of $shadows `#{$shadows}`";
+    }
+  }
+  // if the value is other than none e.g inherit
+  @error "invalid value of $shadows `#{$shadows}`";
+}

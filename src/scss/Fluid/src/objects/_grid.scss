@@ -1,0 +1,66 @@
+//
+// Grid
+//
+
+@if $generate-grid-classes {
+  .grid {
+    display: flex;
+    flex-wrap: wrap; // wrap grid to multiline if overflow
+  }
+
+  //
+  // Grid column
+  //
+
+  .column {
+    box-sizing: border-box; // Change from `box-sizing: content-box` so that `width` is not affected by `padding` or `border`
+    flex: 1 0 0%; // Make .column flexible
+    min-width: 0; // shrink .column to only available space when no width is defined https://dfmcphee.com/flex-items-and-min-width-0/
+    max-width: 100%; // Wrap .column inside grid when with auto sizing classes on IE
+
+    // Grid Gap
+    @if $enable-grid-gap {
+      padding: $grid-gap / 2;
+    }
+  }
+
+  //
+  // Grid Negative Margin
+  //
+
+  @if $enable-grid-gap {
+    .grid.is-adjust {
+      margin: -1 * ($grid-gap / 2);
+
+      &.has-gap-0 {
+        margin: 0;
+      }
+
+      &.has-gap-sm {
+        margin: -1 * ($grid-gap / 4);
+      }
+
+      &.has-gap-lg {
+        margin: -1 * ($grid-gap);
+      }
+    }
+  }
+
+  //
+  // Grid Gap
+  //
+
+  @if $enable-grid-gap {
+    .has-gap-0 > .column {
+      padding: 0;
+    }
+
+    .has-gap-sm > .column {
+      padding: $grid-gap / 4;
+    }
+
+    .has-gap-lg > .column {
+      padding: $grid-gap;
+    }
+  }
+}

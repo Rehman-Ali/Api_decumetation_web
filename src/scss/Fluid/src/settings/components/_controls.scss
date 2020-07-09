@@ -1,0 +1,43 @@
+//
+// control Settings
+//
+// Shared Settings between various controls
+
+//
+// Inherit
+//
+$controls-borderwidth:                            $borderwidth-default !default;
+$controls-borderradius:                           $borderradius-default !default;
+$controls-lineheight:                             $lineheight-default !default;
+$controls-fontweight:                             $fontweight-normal !default;
+
+//
+// Setting
+//
+$controls-theme:                                  $gray-600 !default;
+$controls-theme-light:                            $gray-300 !default;
+$controls-color:                                  $body-color !default;
+$controls-background:                             transparent !default;
+$controls-bordercolor:                            transparent !default;
+$controls-padding-x:                              .75em !default;
+$controls-fontfamily:                             null !default;
+$controls-transition:                             color, background-color, border, box-shadow !default;
+
+$controls-focus-boxshadow-size:                   .2rem !default;
+$controls-focus-boxshadow:                        0 0 0 $controls-focus-boxshadow-size !default; // color is explicitly defined on usage
+
+$controls-disabled-background:                    $controls-theme !default;
+$controls-disabled-opacity:                       .5 !default;
+
+$controls-label-background:                       $white !default;
+$controls-label-bordercolor:                      $controls-theme-light !default;
+$controls-label-cursor:                           pointer !default;
+
+//
+// Derived
+//
+
+$controls-padding-y:                              $controls-padding-x / 2 !default;
+
+$controls-label-before-size:                      convert-unit(16px, em) !default; // use 16px controls
+$controls-label-paddingleft:                      $controls-label-before-size * 1.5 !default;

@@ -1,0 +1,53 @@
+//
+// Align
+//
+
+@if $generate-utility-classes {
+  $config: (
+    responsive: true,
+    properties: align-content,
+    selector: "align-content",
+    values: (
+      top: flex-start,
+      middle: center,
+      bottom: flex-end,
+      between: space-between,
+      around: space-around
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+
+  $config: (
+    responsive: true,
+    properties: align-items,
+    selector: "align",
+    values: (
+      top: flex-start,
+      middle: center,
+      bottom: flex-end,
+      baseline: baseline,
+      stretch: stretch
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+
+  $config: (
+    responsive: true,
+    properties: align-self,
+    selector: "align-self",
+    values: (
+      top: flex-start,
+      middle: center,
+      bottom: flex-end,
+      baseline: baseline,
+      stretch: stretch
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

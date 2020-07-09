@@ -1,0 +1,27 @@
+//
+// Order
+//
+
+@if $generate-utility-classes {
+  $HALFORDERS: ();
+  @for $index from 0 to $grid-columns / 2 {
+    $HALFORDERS: map-merge($HALFORDERS, ($index: $index));
+  }
+
+  $config: (
+    responsive: true,
+    properties: order,
+    selector: "order",
+    values:
+    map-merge(
+      $HALFORDERS,
+      (
+        first: -1,
+        last: $grid-columns + 1
+      )
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

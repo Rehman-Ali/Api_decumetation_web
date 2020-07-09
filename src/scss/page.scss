@@ -1,0 +1,149 @@
+@import "./Fluid/src/vendors/vendors";
+@import "./Fluid/src/tools/tools";
+@import "./Fluid/src/settings/settings";
+@import "./Fluid/src/settings/placeholders/prefers-reduced-motion";
+
+//
+// Home
+//
+
+.HOME {
+  .services {
+    .slick-list {
+      margin-left: -2.1rem;
+    }
+    .slick-slide {
+      margin-top: 180px;
+
+      .img {
+        margin-top: -180px;
+      }
+
+      padding: 1rem;
+    }
+    .btn.is-min::before {
+      border-bottom-width: $borderwidth-wide;
+    }
+
+    .slick-track > div > div > div {
+      background-image: linear-gradient(rgb(195, 216, 246) 0%, rgb(195, 216, 246) 100%);
+    }
+
+    .slick-track > div:nth-child(even) > div > div {
+      background-image: linear-gradient(rgb(235, 202, 217) 0%, rgb(235, 202, 217) 100%);
+    }
+  }
+}
+
+//
+// Case Study
+//
+
+.masonry-item {
+  position: relative;
+  & + & {
+    margin-top: 16px;
+  }
+
+  min-height: 250px;
+  &.sm {
+    min-height: 128px;
+  }
+
+  &.md {
+    min-height: 375px;
+  }
+
+  &.lg {
+    min-height: 516px;
+  }
+
+  > .img-bg {
+    background-color: initial;
+  }
+
+  @include hover {
+    .about {
+      opacity: 1;
+    }
+  }
+
+  .image {
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+
+    .img-bg {
+      position: static;
+    }
+
+    .about {
+      opacity: 0;
+      @include transition(opacity 0.3s ease-in-out);
+
+      @include before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.5), hsla(0, 0%, 0%, 0.8));
+      }
+
+      > img {
+        max-width: 80%;
+      }
+    }
+  }
+
+  @include hover {
+    .image .about {
+      opacity: 1;
+    }
+  }
+}
+
+.CASESTUDY {
+  .bottom-20 {
+    bottom: 20%;
+  }
+
+  .top-20 {
+    top: 20%;
+  }
+}
+
+.CAREER {
+  .card-hover {
+    .icon {
+      transition: color 0.35s ease-in-out;
+    }
+
+    @include hover {
+      .icon.ri-angularjs-fill {
+        color: #dd0330;
+      }
+
+      .icon.ri-reactjs-fill {
+        color: #00d9ff;
+      }
+
+      .icon.ri-flutter-fill {
+        color: #51c0f2;
+      }
+
+      .icon.ri-vuejs-fill {
+        color: #41b883;
+      }
+    }
+  }
+}
+
+a[target="_blank"] {
+  transition: transition(filter);
+  filter: grayscale(100%);
+  @include hover {
+    filter: none;
+  }
+}

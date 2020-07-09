@@ -1,0 +1,23 @@
+//
+// Container
+//
+
+@if $generate-object-classes {
+  // Basic container
+  // center and contain its content. decreases the size to `$container-maxwidth : 90%` above breakpoint sm
+  .container {
+    width: 100%;
+    padding-right: $container-padding-x;
+    padding-left: $container-padding-x;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include media-breakpoint-above(sm) {
+      max-width: $container-maxwidth;
+    }
+
+    + .container {
+      margin-top: .5rem;
+    }
+  }
+}

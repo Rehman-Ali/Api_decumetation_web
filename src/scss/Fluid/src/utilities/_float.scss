@@ -1,0 +1,19 @@
+//
+// Float
+//
+
+@if $generate-utility-classes {
+  $config: (
+    responsive: true,
+    properties: float,
+    selector: "float",
+    values: (
+      left,
+      right,
+      none
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

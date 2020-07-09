@@ -1,0 +1,17 @@
+//
+// Visibility
+//
+
+@if $generate-utility-classes {
+  $config: (
+    properties: visibility,
+    selector: "is",
+    values: (
+      visible: visible,
+      invisible: hidden
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

@@ -1,0 +1,24 @@
+//
+// Code Settings
+//
+
+//
+// Inherit
+//
+$pre-code-langbadge-fontweight:        $fontweight-bold !default;
+
+//
+// Setting
+//
+$code-fontsize:                        .85em !default;
+$code-background:                      $light !default;
+$code-margin-x:                        .2em !default;
+$code-padding:                         .2em .4em .1em !default;
+
+$pre-code-padding:                     1em !default;
+$pre-code-borderleft:                  $borderwidth-wide solid $primary !default;
+
+$pre-code-langbadge-background:        $primary !default;
+$pre-code-langbadge-color:             clr-auto($pre-code-langbadge-background, $black, $white) !default;
+$pre-code-langbadge-texttransform:     uppercase !default;
+$pre-code-langbadge-padding:           2px 16px 2px 8px !default;

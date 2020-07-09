@@ -1,0 +1,48 @@
+@if $generate-utility-classes {
+  $config: (
+    properties: color,
+    selector: "clr",
+    values:
+    map-merge(
+      $theme-colors,
+      (
+        body: $body-color,
+        black: $black,
+        black-25: rgba($black, .25),
+        black-50: rgba($black, .5),
+        black-75: rgba($black, .75),
+        white: $white,
+        white-25: rgba($white, .25),
+        white-50: rgba($white, .5),
+        white-75: rgba($white, .75),
+        hide: transparent,
+        disabled: $text-disabled
+      )
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+
+  @each $color, $value in map-remove(map-get($config, "values"), hide, disabled) {
+    @if $link-hover-dark-step != 0 {
+      a.#{map-get($config,"selector")}-#{$color} {
+        @include hover-focus {
+          // stylelint-disable-next-line declaration-no-important
+          color: clr-step($value, $link-hover-dark-step) !important;
+        }
+      }
+    }
+  }
+
+  @each $color, $value in map-remove(map-get($config, "values"), hide, disabled) {
+    .#{map-get($config,"selector")}-hover-focus-#{$color} {
+      color: inherit !important;
+      @include hover-focus {
+        // stylelint-disable-next-line declaration-no-important
+        color: $value !important;
+      }
+    }
+  }
+
+}

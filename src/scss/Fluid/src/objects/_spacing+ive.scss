@@ -1,0 +1,136 @@
+/**
+ * Table of Contents:
+ *        Basic Margin
+ *        Margin top
+ *        Margin right
+ *        Margin bottom
+ *        Margin left
+ *        Margin horizontal
+ *        Margin vertical
+ *        Basic Padding
+ *        Padding top
+ *        Padding right
+ *        Padding bottom
+ *        Padding left
+ *        padding horizontal
+ *        padding vertical
+* ===============================================
+*/
+
+@if $generate-spacing-classes {
+  //
+  // Basic Margin
+  //
+
+  $config: (
+    responsive: true,
+    properties: margin,
+    selector: "m",
+    values: $space-sizes,
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+
+  //
+  // Directional Margin
+  //
+
+  $config: (
+    responsive: true,
+    properties: margin,
+    selector: "m",
+    values: $space-sizes,
+    infixes: $directions,
+    disable-prefix-infixes-keys: true,
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+
+  //
+  //  Margin horizontal
+  //
+
+  $config: (
+    responsive: true,
+    properties: margin-left margin-right,
+    selector: "mx",
+    values: $space-sizes,
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+
+  //
+  //  Margin vertical
+  //
+
+  $config: (
+    responsive: true,
+    properties: margin-top margin-bottom,
+    selector: "my",
+    values: $space-sizes,
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+
+  //
+  // Basic padding
+  //
+
+  $config: (
+    responsive: true,
+    properties: padding,
+    selector: "p",
+    values: $space-sizes,
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+
+  //
+  // Directional padding
+  //
+
+  $config: (
+    responsive: true,
+    properties: padding,
+    selector: "p",
+    values: $space-sizes,
+    infixes: $directions,
+    disable-prefix-infixes-keys: true,
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+
+  //
+  //  padding horizontal
+  //
+
+  $config: (
+    responsive: true,
+    properties: padding-left padding-right,
+    selector: "px",
+    values: $space-sizes,
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+
+  //
+  //  padding vertical
+  //
+
+  $config: (
+    responsive: true,
+    properties: padding-top padding-bottom,
+    selector: "py",
+    values: $space-sizes,
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

@@ -1,0 +1,93 @@
+//
+// Basic Colors Settings
+//
+
+//
+// Setting
+//
+$blue:          #1890ff !default;
+$indigo:        #5400ff !default;
+$purple:        #805ad5 !default;
+$pink:          #eb2f96 !default;
+$red:           #f5222d !default;
+$orange:        #fa8c16 !default;
+$yellow:        #fadb14 !default;
+$green:         #52c41a !default;
+$teal:          #20c997 !default;
+$cyan:          #13c2c2 !default;
+$brown:         #6d4c41 !default;
+$lime:          #a0d911 !default;
+$gold:          #faad14 !default;
+$volcano:       #fa541c !default;
+$geekblue:      #2f54eb !default;
+$vividvoilet:   #b721ff !default;
+
+$colors: (
+  "blue":         $blue,
+  "indigo":       $indigo,
+  "purple":       $purple,
+  "pink":         $pink,
+  "red":          $red,
+  "orange":       $orange,
+  "yellow":       $yellow,
+  "green":        $green,
+  "teal":         $teal,
+  "cyan":         $cyan,
+  "brown":        $brown,
+  "lime":         $lime,
+  "gold":         $gold,
+  "volcano":      $volcano,
+  "geekblue":     $geekblue,
+  "vividvoilet":  $vividvoilet,
+) !default;
+
+//
+// Grayscale Colors
+//
+
+$white:          #fff !default;
+$gray-100:       hsl(0, 0%, 96%) !default;
+$gray-200:       hsl(0, 0%, 83%) !default;
+$gray-300:       hsl(0, 0%, 72%) !default;
+$gray-400:       hsl(0, 0%, 61%) !default;
+$gray-500:       hsl(0, 0%, 50%) !default;
+$gray-600:       hsl(0, 0%, 39%) !default;
+$gray-700:       hsl(0, 0%, 28%) !default;
+$gray-800:       hsl(0, 0%, 17%) !default;
+$gray-900:       hsl(0, 0%, 6%) !default;
+$black:          #000 !default;
+
+//
+// Derived
+//
+
+//
+// Theme Colors
+//
+
+$disabled:        $gray-400 !default;
+
+$primary:         #035898 !default;
+$secondary:       $gray-500 !default;
+$valid:           $green !default;
+$info:            $cyan !default;
+$warn:            $yellow !default;
+$error:           $red !default;
+$light:           $gray-100 !default;
+$dark:            $gray-800 !default;
+
+$theme-colors: (
+  "light":           $light,
+  "dark":            $dark,
+  "primary":         $primary,
+  "secondary":       $secondary,
+  "info":            $info,
+  "warn":            $warn,
+  "valid":           $valid,
+  "error":           $error,
+) !default;
+
+// Combine All colors if $enable-all-color-variant option is enabled
+@if $enable-all-color-variant {
+  $theme-colors: map-merge($colors, $theme-colors);
+}

@@ -1,0 +1,38 @@
+//
+// Position
+//
+
+@if $generate-utility-classes {
+  $config: (
+    responsive: true,
+    properties: position,
+    selector: "",
+    values: static relative absolute fixed sticky,
+    disable-prefix-values-keys: true,
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+
+  //
+  // Doc : Add Documentation
+  //
+
+  $config: (
+    properties: "",
+    selector: "",
+    values: (
+      0: 0%,
+      25: 25%,
+      50: 50%,
+      75: 75%,
+      100: 100%
+    ),
+    infixes: top bottom right left,
+    disable-prefix-infixes-keys: true,
+    disable-prefix-infixes-values: true,
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

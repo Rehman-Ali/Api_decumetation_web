@@ -1,0 +1,80 @@
+//
+// Icon
+//
+
+@if $generate-object-classes {
+  .icon {
+    display: inline-flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    width: $icon-area;
+    height: $icon-area;
+
+    svg {
+      vertical-align: baseline;
+    }
+  }
+
+  .has-icon-left,
+  .has-icon-right {
+    @extend %position-relative;
+
+    > .icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .has-icon-left {
+    > .input {
+      padding-left: $icon-area + $icon-offset;
+    }
+
+    > .icon.is-left {
+      left: $icon-offset / 2 + .1; // slightly increase icon offset so that they are visually correctly align
+    }
+  }
+
+  .has-icon-right {
+    > .input {
+      padding-right: $icon-area + $icon-offset;
+    }
+
+    > .icon.is-right {
+      right: $icon-offset / 2 + .1; // slightly increase icon offset so that they are visually correctly align
+      left: auto;
+    }
+  }
+
+  @if $enable-experimental-css {
+    //
+    // Note : Experimental Feature
+    // Issue : -
+    // Doc : add doc
+    //
+    .is-loading {
+      @include loading-spinner($controls-color);
+
+      &:not(.btn) {
+        background-color: $body-background;
+
+        @include before {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: $overlay-zindex;
+          background-color: inherit;
+        }
+
+        @include after {
+          z-index: $overlay-zindex;
+        }
+      }
+    }
+  }
+}

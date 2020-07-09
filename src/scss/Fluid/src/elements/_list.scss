@@ -1,0 +1,23 @@
+//
+// list
+//
+
+ol,
+ul {
+  padding-left: 2rem;
+}
+
+ol,
+ul,
+dl {
+  @extend %margintop-0; // nuke the top margin for easier control within type scales as it avoids margin collapsing
+  margin-bottom: 1rem;
+}
+
+dt {
+  font-weight: $fontweight-bold;
+}
+
+dd {
+  margin-bottom: $space-typography;
+}

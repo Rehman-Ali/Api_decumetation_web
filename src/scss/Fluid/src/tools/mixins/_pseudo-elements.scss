@@ -1,0 +1,30 @@
+// stylelint-disable selector-pseudo-element-blacklist
+//
+// Pseudo elements Mixin
+//
+// These mixins are used for pseudo-elements
+
+// before
+// Generate before Pseudo element
+@mixin before() {
+  &::before {
+    @content;
+  }
+}
+
+// after
+// Generate after Pseudo element
+@mixin after() {
+  &::after {
+    @content;
+  }
+}
+
+// before + after
+// Generate before Pseudo element
+@mixin before-after() {
+  &::before,
+  &::after {
+    @content;
+  }
+}

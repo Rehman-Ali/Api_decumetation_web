@@ -1,0 +1,31 @@
+@import "../scss/Fluid/src/vendors/vendors";
+@import "../scss/Fluid/src/tools/tools";
+@import "../scss/Fluid/src/settings/settings";
+@import "../scss/Fluid/src/settings/placeholders/prefers-reduced-motion";
+
+.CrossPlatform {
+  .crosslaptop {
+    .slick-slide > div > div {
+      height: 390px;
+      // width: 525px !important;
+    }
+  }
+
+  .crossmobile {
+    background: white;
+    width: 165px;
+    position: absolute;
+    top: 65px;
+    left: 135px;
+    .slick-slide {
+      padding: 4px;
+      > div > div {
+        height: 290px;
+      }
+    }
+  }
+
+  .ant-carousel .slick-dots-bottom {
+    bottom: -80px;
+  }
+}

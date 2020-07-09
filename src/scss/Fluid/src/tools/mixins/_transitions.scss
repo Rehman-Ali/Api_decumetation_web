@@ -1,0 +1,92 @@
+// stylelint-disable property-blacklist
+//
+// Transition Mixin
+//
+
+//
+// transition
+// Mixin using transition function to optimize transition and
+// disable transition at prefers-reduced-motion-media-query
+//
+// Parameters:
+// {String,List} $transitions - transitions strings
+@mixin transition($transitions...) {
+  @if $enable-transitions {
+    transition: transition($transitions);
+
+    @if $enable-prefers-reduced-motion-mediaQuery {
+      @extend %prefers-reduced-motion;
+    }
+  }
+}
+
+//
+// animation
+// Mixin Used to generate animation
+//
+// Arguments:
+// {String} $name - Name of the animation
+// [optional] {Boolean} $infinite - used to set animation to infinite
+// [optional] {Time} $duration - Duration of animation
+// [optional] {Animation function} $function - Animation function
+//
+@mixin animation($name, $duration: 1s, $function: ease-out, $infinite: false, $fillmode: both) {
+  @if $enable-transitions {
+    @if ($name == none) {
+      animation: none;
+    } @else {
+      @include include-keyframe($name);
+      $infinite: if($infinite, infinite, null);
+      animation: $name $duration $function $infinite $fillmode;
+    }
+  }
+}
+
+$keyframes: (
+  ripple: true,
+  ripple-gray: true,
+  flash: true,
+  fadein: true,
+  spin: true
+) !default;
+
+@mixin include-keyframe($name) {
+  @if map-has-key($keyframes, $name) {
+    @if map-get($keyframes, $name) {
+      $keyframes: map-merge($keyframes, ($name : false)) !global;
+      @if $name == ripple {
+        @keyframes ripple {
+          from { box-shadow: #{box-shadow(0 0 0 0 currentColor)}; }
+          75% { box-shadow: #{box-shadow(0 0 0 ($controls-focus-boxshadow-size * 1.5) transparent)}; }
+          76% { box-shadow: #{box-shadow(none)}; }
+        }
+      } @else if $name == ripple-gray {
+        @keyframes ripple-gray {
+          from { box-shadow: #{box-shadow(0 0 0 0 $gray-500)}; }
+          75% { box-shadow: #{box-shadow(0 0 0 ($controls-focus-boxshadow-size * 1.5) transparent)}; }
+          76% { box-shadow: #{box-shadow(none)}; }
+        }
+      } @else if $name == flash {
+        @keyframes flash {
+          from,
+          50% { opacity: 1; }
+
+          25%,
+          75% { opacity: 0; }
+        }
+      } @else if $name == fadein {
+        @keyframes fadein {
+          from { opacity: 0; }
+        }
+      } @else if $name == spin {
+        @keyframes spin {
+          100% { transform: rotate(360deg); }
+        }
+      } @else {
+        @error "keyframe name `#{$name}` exist in $keyframes but actual keyframes are not found";
+      }
+    }
+  } @else {
+    @error "animation keyframe for animation `#{$name}` not found.";
+  }
+}

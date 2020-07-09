@@ -1,0 +1,18 @@
+//
+// Font-family
+//
+
+@if $generate-utility-classes {
+  $config: (
+    properties: font-family,
+    selector: "font",
+    values: (
+      sans-serif: $fontfamily-sans-serif,
+      serif: $fontfamily-serif,
+      monospace: $fontfamily-monospace
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

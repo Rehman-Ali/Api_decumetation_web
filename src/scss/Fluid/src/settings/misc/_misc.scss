@@ -1,0 +1,34 @@
+//
+// Miscellaneous Settings
+//
+
+//
+// Setting
+//
+// Directions
+$directions: (
+  t:    top,
+  b:    bottom,
+  r:    right,
+  l:    left
+) !default;
+
+// Sizes
+$sizes: (
+  0:	  0,
+  25:	  25%,
+  50:	  50%,
+  75:	  75%,
+  100:  100%
+) !default;
+
+// Rotations
+$rotations: (
+  0:	   0deg,
+  45:	   45deg,
+  90:	   90deg,
+  135:   135deg,
+  180:   180deg,
+  225:   225deg,
+  270:   270deg
+) !default;

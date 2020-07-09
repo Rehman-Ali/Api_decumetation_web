@@ -1,0 +1,22 @@
+//
+// suffix
+// Trim and suffix the value with symbol
+//
+// Parameters:
+// {*} $value - value
+// {String} $symbol - symbol to suffix
+//
+// Example of use:
+// suffix('manta', "~"); // manta~
+//
+// Return:
+// suffixed Value or empty if value is empty or null
+//
+@function suffix($value, $symbol) {
+  @if $value == () {
+    @return ();
+  } @else if $value == null or $value == "" {
+    @return "";
+  }
+  @return #{$value}#{$symbol};
+}

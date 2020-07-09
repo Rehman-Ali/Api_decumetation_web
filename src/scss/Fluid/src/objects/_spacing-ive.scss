@@ -1,0 +1,78 @@
+/**
+ * Table of Contents:
+ *        Basic Margin
+ *        Margin top
+ *        Margin right
+ *        Margin bottom
+ *        Margin left
+ *        Margin horizontal
+ *        Margin vertical
+* ===============================================
+*/
+
+@if $generate-spacing-classes {
+  $SIZES: $space-sizes;
+  $SIZES: map-remove($SIZES, 0); // Remove 0 in -ive spacing
+  $SIZES: map-remove($SIZES, auto); // Remove auto in -ive spacing
+  $SIZES: negate-map($SIZES, "both"); // add -ive sigh to both size and value
+
+  //
+  // Basic Margin
+  //
+
+  $config: (
+    responsive: true,
+    properties: margin,
+    selector: "m",
+    values: $SIZES,
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+
+  //
+  // Directional Margin
+  //
+
+  $config: (
+    responsive: true,
+    properties: margin,
+    selector: "m",
+    values: $SIZES,
+    infixes: $directions,
+    disable-prefix-infixes-keys: true,
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+
+  //
+  //  Margin horizontal
+  //
+
+  // Idea : remove because it isn't used often ?
+  $config: (
+    responsive: true,
+    properties: margin-left margin-right,
+    selector: "mx",
+    values: $SIZES,
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+
+  //
+  //  Margin vertical
+  //
+
+  // Idea : remove because it isn't used often ?
+  $config: (
+    responsive: true,
+    properties: margin-top margin-bottom,
+    selector: "my",
+    values: $SIZES,
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

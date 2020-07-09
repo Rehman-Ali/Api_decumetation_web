@@ -1,0 +1,66 @@
+//
+// Divider
+//
+// used to separating elements by showing line with text in center
+//
+// Modifiers:
+//  is-y : Makes Divider Vertical
+//  txt-left : align text position to start of divider
+//  txt-right : align text position to end of divider
+//
+@if $generate-object-classes {
+  .divider {
+    display: flex;
+    width: 100%;
+    opacity: $controls-disabled-opacity;
+    text-align: center; // align text in center when vertical
+    white-space: nowrap; // prevent wrapping of text
+
+    @include before-after {
+      content: "";
+      align-self: center;
+      width: inherit;
+      height: 100%;
+      border: $borderwidth-normal / 2 solid currentColor;
+    }
+
+    &:not(:empty) {
+      @include before-after {
+        margin: $controls-padding-y / 2 $controls-padding-x / 2;
+      }
+    }
+  }
+
+  .divider.is-y {
+    width: auto; // override horizontal style
+    height: 100%; // spread to full height when vertical
+  }
+
+  .divider.txt-left {
+    &:not(.is-y) {
+      @include before {
+        width: 5%;
+      }
+    }
+
+    &.is-y {
+      @include before {
+        height: 5%;
+      }
+    }
+  }
+
+  .divider.txt-right {
+    &:not(.is-y) {
+      @include after {
+        width: 5%;
+      }
+    }
+
+    &.is-y {
+      @include after {
+        height: 5%;
+      }
+    }
+  }
+}

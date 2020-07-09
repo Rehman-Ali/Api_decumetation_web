@@ -1,0 +1,19 @@
+//
+// Menu Mixin
+//
+
+//
+// Theme Variant Mixin
+//
+@mixin menu-variant($color) {
+  // Style focus state to show elements is in focus state using tab
+  @include hover-focus {
+    border-color: $color;
+    background-color: rgba($color, .3);
+  }
+
+  &.active {
+    color: clr-auto($color);
+    background-color: $color;
+  }
+}

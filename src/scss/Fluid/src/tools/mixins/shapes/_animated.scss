@@ -1,0 +1,34 @@
+//
+// Animated Shapes
+//
+
+// Loading Spinner Shape to indicate loading process
+@mixin loading-spinner($color: $primary) {
+  position: relative;
+  pointer-events: none;
+  @include after {
+    content: "";
+    position: absolute;
+    top: calc(50% - (1.14286em / 2));
+    right: 0;
+    bottom: 0;
+    left: calc(50% - (1.14286em / 2));
+    transform: inherit; // reset transform style
+    width: convert-unit(16px, em);
+    height: convert-unit(16px, em);
+    border: .2em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    // stylelint-disable-next-line property-blacklist
+    animation: spin 1s infinite linear; // avoid using @mixin animation to generate radius independent of `$enable-transitions` option
+    color: $color;
+    @include include-keyframe(spin);
+  }
+}
+
+// Mixin to override Loading spinner shape color
+@mixin loading-spinner-color($color) {
+  @include after {
+    color: $color;
+  }
+}

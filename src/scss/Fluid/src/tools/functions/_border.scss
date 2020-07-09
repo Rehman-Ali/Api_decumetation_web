@@ -1,0 +1,17 @@
+//
+// Border Function
+//
+
+//
+// border
+// Function Used to control and generate border
+//
+// Parameters:
+// {String} $border - border strings
+@function border($border: $border-default, $fallback-value: null) {
+  @if $design-shadow-or-border != "shadow" {
+    @return $border;
+  }
+
+  @return $fallback-value;
+}

@@ -1,0 +1,20 @@
+//
+// Grid direction
+//
+
+@if $generate-utility-classes {
+  $config: (
+    responsive: true,
+    properties: flex-direction,
+    selector: "is",
+    values: (
+      x: row,
+      y: column,
+      x-rev: row-reverse,
+      y-rev: column-reverse
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

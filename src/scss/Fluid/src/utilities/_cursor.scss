@@ -1,0 +1,22 @@
+//
+// Cursor
+//
+
+@if $generate-utility-classes {
+  $config: (
+    properties: cursor,
+    selector: "cursor",
+    values: (
+      hand: pointer,
+      none: none,
+      wait: wait,
+      move: move,
+      "not": not-allowed,
+      help: help,
+      grab: grab
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

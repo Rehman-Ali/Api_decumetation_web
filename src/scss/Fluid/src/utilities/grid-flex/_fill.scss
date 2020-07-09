@@ -1,0 +1,16 @@
+//
+// Flex-fill
+//
+
+@if $generate-utility-classes {
+  $config: (
+    properties: flex,
+    selector: "flex",
+    values: (
+      fill: 1 1 auto
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

@@ -1,0 +1,17 @@
+//
+// kbd element
+//
+
+kbd {
+  padding: $kbd-padding;
+  border-radius: border-radius($borderradius-small);
+  color: $kbd-color;
+  background-color: $kbd-background;
+  font-weight: $kbd-fontweight;
+  @include fontsize($kbd-fontsize);
+
+  kbd {
+    @include fontsize(100%);
+    font-weight: $nested-kbd-fontweight;
+  }
+}

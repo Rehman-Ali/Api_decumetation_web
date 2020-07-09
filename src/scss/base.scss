@@ -1,0 +1,369 @@
+@import "./Fluid/src/vendors/vendors";
+@import "./Fluid/src/tools/tools";
+@import "./Fluid/src/settings/settings";
+@import "./Fluid/src/settings/placeholders/prefers-reduced-motion";
+
+::-moz-selection {
+  background: $orange;
+}
+
+::selection {
+  background: $orange;
+}
+
+body * {
+  &::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    background-color: $gray-100;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: $borderradius-pill;
+    background-color: rgba($dark, 0.65);
+  }
+
+  // stylelint-disable-next-line selector-pseudo-class-blacklist
+  &::-webkit-scrollbar-thumb:focus {
+    background-color: $dark;
+  }
+
+  // stylelint-disable-next-line selector-pseudo-class-blacklist
+  &::-webkit-scrollbar:hover {
+    background-color: $gray-200;
+  }
+}
+
+.card-zoom {
+  position: relative;
+  overflow: hidden;
+  .img-bg {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    @include transition(transform 0.3s ease-in-out);
+
+    @include after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.5), hsla(0, 0%, 0%, 0.8));
+      opacity: 0;
+      @include transition(opacity 0.3s ease-in-out);
+    }
+  }
+
+  @include hover {
+    .img-bg {
+      @include after {
+        opacity: 1;
+      }
+      transform: scale(1.15);
+    }
+  }
+}
+
+.card-hover {
+  @include transition(box-shadow 0.3s, transform 0.3s);
+  box-shadow: box-shadow($boxshadow-small);
+
+  @include hover {
+    transform: translateY(-3%);
+    box-shadow: box-shadow($boxshadow-default);
+  }
+}
+
+.clr-inherit {
+  color: inherit !important;
+}
+
+.ant-carousel {
+  .slick-slide {
+    padding: $grid-gap;
+  }
+
+  .slick-arrow {
+    // reset
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    color: $black;
+    @include hover {
+      color: $black;
+    }
+    font-family: "remixicon" !important;
+    font-size: 2.75em;
+    line-height: 1;
+    margin-top: 0;
+    transform: translateY(-50%);
+    z-index: 10;
+    // opacity: 0;
+    // transition: transition(opacity);
+
+    // icon
+    width: $icon-area;
+    height: $icon-area;
+
+    @include before {
+      position: absolute;
+      // text-shadow: 4px 4.25px 3px rgba($black, 0.175);
+      transition: transition(padding-left, padding-right);
+    }
+  }
+
+  .slick-prev {
+    @include before {
+      // content: "\EA60" !important;
+    }
+    left: -6%;
+    @include hover {
+      @include before {
+        padding-right: 35%;
+      }
+    }
+  }
+
+  .slick-next {
+    @include before {
+      // content: "\EA6C" !important;
+    }
+    right: -6%;
+    @include hover {
+      @include before {
+        padding-left: 35%;
+      }
+    }
+  }
+
+  @include hover {
+    .slick-arrow {
+      opacity: 1;
+    }
+  }
+}
+
+// .icon {
+//   *:not(.flex):not(.control):not(.inline-flex):not(.is-circle) > & {
+//     transform: translateY(2px);
+//   }
+
+//   *:not(.is-circle) > &::after {
+//     content: "\00a0\00a0";
+//   }
+// }
+
+.after-hide::after {
+  content: none !important;
+}
+
+.before-hide::before {
+  content: none !important;
+}
+
+.img-bg {
+  background-color: $primary;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[type="number"].hide-arrow {
+  -moz-appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.ant-menu-submenu-title {
+  padding: inherit !important;
+}
+
+.ant-menu-item.ant-menu-item-only-child {
+  padding-left: $nestedMenu-indent !important;
+}
+
+.ant-menu-sub.ant-menu-inline .ant-menu-item-group-title {
+  padding-left: $nestedMenu-indent / 2 !important;
+}
+
+.ant-menu {
+  border: none;
+}
+
+.ant-tabs.centered {
+  .ant-tabs-nav-wrap {
+    justify-content: center;
+  }
+}
+
+.ant-carousel {
+  .slick-dots li {
+    background-color: rgba($primary, 0.5);
+
+    &.slick-active button {
+      background-color: $primary;
+    }
+  }
+  .slick-dots-bottom {
+    bottom: -60px;
+  }
+}
+
+//
+// Component
+//
+
+.lyt-main {
+  #scrolldown {
+    display: none;
+    transform: translate(-25%, -50%);
+    padding: 1.75rem;
+
+    .icon {
+      animation: updown 2.75s ease-in-out infinite both;
+    }
+  }
+
+  .h-min-100vh {
+    position: relative;
+    #scrolldown {
+      display: flex;
+    }
+  }
+}
+
+//
+// Header
+//
+
+.lyt-header {
+  @include transition(min-height 0.35s ease-in-out, line-height 0.35s ease-in-out, box-shadow 1s ease-in-out);
+
+  &.headroom--top {
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  .menu {
+    position: relative;
+    @include after {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      // @include triangle(top, 10px, $primary);
+    }
+  }
+
+  #nav {
+    .dropdown-trigger {
+      border: none;
+    }
+  }
+
+  &.headroom--not-top {
+    box-shadow: $boxshadow-small;
+  }
+}
+
+//
+//
+//
+
+@keyframes updown {
+  0% {
+    transform: translateY(15%);
+  }
+  50% {
+    transform: translateY(-15%);
+  }
+  100% {
+    transform: translateY(15%);
+  }
+}
+
+#clocks {
+  background-attachment: fixed;
+}
+
+//
+// spacing
+//
+
+.px-2rem {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+.top-header {
+  top: $header-height;
+}
+
+.mt-header {
+  margin-top: $header-height;
+}
+
+.lyt-main {
+  z-index: 1;
+}
+
+.line {
+  margin-left: 25px;
+  border: 1px dashed $primary;
+  width: 100%;
+}
+
+.move-icon.is-sld {
+  .icon {
+    @include transition(margin-left);
+  }
+
+  &:hover {
+    .icon {
+      margin-left: 0.75rem !important;
+    }
+  }
+}
+
+.slick-slider.zoom-center .slick-slide {
+  > div {
+    @include transition(transform 1s);
+    transform: scale(0.8);
+  }
+
+  &.slick-current > div {
+    transform: scale(1);
+  }
+}
+
+.trans--50--50 {
+  transform: translate(-50%, -50%);
+}
+
+.trans-x--50 {
+  transform: translateX(-50%);
+}
+
+.trans-y--50 {
+  transform: translateY(-50%);
+}
+
+.work_slider .slick-slide {
+  width: 900px !important;
+}
+
+a.btn {
+  text-decoration: none !important;
+}

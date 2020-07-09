@@ -1,0 +1,14 @@
+//
+// Pointer events
+//
+
+@if $generate-utility-classes {
+  $config: (
+    properties: pointer-events,
+    selector: "event",
+    values: none auto,
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

@@ -1,0 +1,20 @@
+//
+// Switch
+//
+
+//
+// Setting
+//
+$switch-width:                          $controls-label-before-size * 2 !default;
+
+$switch-circle-size:                    convert-unit(16px, em) !default;
+$switch-circle-tranform-scale:          .7 !default;
+$switch-circle-transition:              left .2s ease-in-out, background-color .2s ease-in-out !default;
+$switch-circle-bordercolor:             $controls-label-bordercolor !default;
+
+$switch-active-circle-background:       $controls-label-background !default;
+
+//
+// Derived
+//
+$switch-label-paddingleft:              $controls-label-paddingleft + $switch-width / 2 !default;

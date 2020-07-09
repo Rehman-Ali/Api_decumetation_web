@@ -1,0 +1,21 @@
+//
+// Space Settings
+//
+
+//
+// Setting
+//
+$space-typography:               .5em !default; // Default Space for typography
+
+// Default Sizes of spaces
+$space-sizes: (
+  auto: auto,
+  0: 0,
+  2: 2%,
+  4: 4%,
+  6: 6%,
+  8: 8%,
+  10: 10%,
+  7px: 7px,
+  1rem: 1rem,
+) !default;

@@ -1,0 +1,29 @@
+//
+// Misc
+//
+
+@if $generate-utility-classes {
+  $config: (
+    properties: writing-mode,
+    selector: "txt",
+    values: (
+      vertical: vertical-lr,
+    ),
+    enable-important-values: true,
+  );
+
+  @include generate-style($config);
+
+  $config: (
+    properties: font-style,
+    selector: "",
+    values: (
+      italic: italic,
+      fontstyle-normal: normal,
+    ),
+    disable-prefix-values-keys: true,
+    enable-important-values: true,
+  );
+
+  @include generate-style($config);
+}

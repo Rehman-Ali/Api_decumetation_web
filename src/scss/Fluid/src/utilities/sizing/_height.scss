@@ -1,0 +1,44 @@
+//
+// Height
+//
+
+@if $generate-utility-classes {
+  $config: (
+    properties: height,
+    selector: "h",
+    values:
+    map-merge(
+      $sizes,
+      (
+        25vh: 25vh,
+        50vh: 50vh,
+        75vh: 75vh,
+        100vh: 100vh,
+        auto: auto,
+        fit: fit-content,
+        vmax: 100vmax,
+        vmin: 100vmin,
+      )
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+
+  $config: (
+    properties: min-height,
+    selector: "h-min",
+    values: (
+      25vh: 25vh,
+      50vh: 50vh,
+      75vh: 75vh,
+      100vh: 100vh,
+      vmax: 100vmax,
+      vmin: 100vmin,
+      auto: auto
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

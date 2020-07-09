@@ -1,0 +1,49 @@
+//
+// Font Settings
+//
+
+//
+// Setting
+//
+$fontsize-normal:             1rem !default;
+
+$fontfamily-sans-serif:       "Poppins", // Safari for OS X and iOS (San Francisco)
+                              -apple-system, // Safari for OS X and iOS (San Francisco)
+                              blinkmacsystemfont, // Chrome < 56 for OS X (San Francisco)
+                              "Segoe UI", // Windows 6+
+                              "PingFang SC", // East Asian languages // Simplified Chinese
+                              "Hiragino Sans GB", // East Asian languages // Japanese
+                              "Ubuntu", // Ubuntu 10.10+
+                              "Cantarell", // Gnome 3+
+                              "Noto Sans", // KDE Plasma 5+
+                              "Helvetica Neue", // fallback
+                              arial, // fallback
+                              sans-serif, // fallback
+                              "Apple Color Emoji", // macOS emoji
+                              "Segoe UI Emoji", // Windows emoji
+                              "Segoe UI Symbol", // Windows emoji
+                              "Noto Color Emoji" !default; // Linux emoji
+$fontfamily-serif:            georgia, cambria, "Times New Roman", times, serif !default;
+$fontfamily-monospace:        "Menlo", // macOS 10.10+
+                              "Ubuntu monospace", // Ubuntu 10.10+
+                              "Noto Mono", // KDE Plasma 5+
+                              "Oxygen Mono", // KDE Plasma 4+
+                              "Liberation Mono", // Linux/OpenOffice
+                              consolas, // fallback
+                              monospace !default; // fallback
+
+$fontweight-lighter:          lighter !default;
+$fontweight-light:            300 !default;
+$fontweight-normal:           400 !default;
+$fontweight-bold:             600 !default;
+$fontweight-bolder:           bolder !default;
+
+$lineheight-default:          1.5 !default;
+
+//
+// Derived
+//
+$fontsize-small:              $fontsize-normal * $default-small-quantity !default;
+$fontsize-large:              $fontsize-normal * $default-large-quantity !default;
+$fontfamily-default:          $fontfamily-sans-serif !default;
+$fontweight-default:          $fontweight-normal !default;

@@ -1,0 +1,46 @@
+//
+// Code Element
+//
+
+code {
+  padding: $code-padding;
+  margin-right: $code-margin-x;
+  margin-left: $code-margin-x;
+  border-radius: border-radius();
+  background: $code-background;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  @include fontsize($code-fontsize);
+}
+
+//
+// Block of code element
+//
+
+pre {
+  @extend %margintop-0; // nuke the top margin for easier control within type scales as it avoids margin collapsing
+  > code {
+    @include fontsize(inherit);
+    position: relative;
+    display: inline-block;
+    padding: $pre-code-padding;
+    border-left: $pre-code-borderleft;
+    @include border-radius-left(0);
+
+    &[data-lang] {
+      @include before {
+        content: attr(data-lang);
+        position: absolute;
+        top: 5px;
+        right: -1px;
+        padding: $pre-code-langbadge-padding;
+        color: $pre-code-langbadge-color;
+        background: $pre-code-langbadge-background;
+        text-transform: $pre-code-langbadge-texttransform;
+        font-weight: $pre-code-langbadge-fontweight;
+        @include border-radius-left();
+      }
+    }
+  }
+}

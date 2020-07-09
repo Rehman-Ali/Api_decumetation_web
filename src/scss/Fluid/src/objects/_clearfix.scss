@@ -1,0 +1,16 @@
+//
+// clearfix
+//
+
+@if $generate-object-classes {
+  //
+  // Doc : add Doc
+  //
+  .clearfix {
+    @include after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+}

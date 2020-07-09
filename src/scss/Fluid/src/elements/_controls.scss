@@ -1,0 +1,29 @@
+//
+// Controls Element
+//
+
+select,
+button,
+[type="file"],
+[type="button"],
+[type="reset"],
+[type="submit"],
+[type="range"] {
+  @include not-disabled {
+    @extend %cursor-pointer; // add "hand" cursor to non-disabled button elements.
+  }
+}
+
+label {
+  margin-bottom: $label-marginbottom;
+}
+
+legend {
+  margin-bottom: .5rem;
+  @include fontsize($fontsize-large);
+}
+
+select::-ms-expand {
+  border: 0; // Unstylish the caret on `<select>`s in IE10+
+  background-color: transparent; // Unstylish the caret on `<select>`s in IE10+
+}

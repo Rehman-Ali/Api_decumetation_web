@@ -1,0 +1,63 @@
+//
+// Background
+//
+
+@if $generate-utility-classes {
+  $config: (
+    properties: background-color,
+    selector: "bg",
+    values:
+    map-merge(
+      $theme-colors,
+      (
+        body: $body-background,
+        black: $black,
+        black-25: rgba($black, .25),
+        black-50: rgba($black, .5),
+        black-75: rgba($black, .75),
+        white: $white,
+        white-25: rgba($white, .25),
+        white-50: rgba($white, .5),
+        white-75: rgba($white, .75),
+        hide: transparent
+      )
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+
+  //
+  // Gradient Background
+  //
+
+  @if $design-solid-or-gradients != "solid" {
+    $GRADIENTS: ();
+
+    @each $color, $value in $theme-colors {
+      $GRADIENTS: map-merge(
+        $GRADIENTS,
+        (
+          $color: gradient($value, 140deg)
+        )
+      );
+    }
+
+    $config: (
+      properties: background,
+      selector: "bg-gradient",
+      values:
+      map-merge(
+        $GRADIENTS,
+        (
+          body: $body-color linear-gradient(140deg, mix($body-background, $body-color, 15%), $body-color) repeat-x,
+          black: $black linear-gradient(140deg, mix($body-background, $black, 15%), $black) repeat-x,
+          white: $white linear-gradient(140deg, mix($body-background, $white, 15%), $white) repeat-x
+        )
+      ),
+      enable-important-values: true
+    );
+
+    @include generate-style($config);
+  }
+}

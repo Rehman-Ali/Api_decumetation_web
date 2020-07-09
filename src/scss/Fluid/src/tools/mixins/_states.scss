@@ -1,0 +1,133 @@
+// stylelint-disable selector-pseudo-class-blacklist
+//
+// States
+//
+// These mixins are used for various elements states.
+// These mixins allow us to quickly modify changes.
+
+// Active
+// Generate active state
+//
+// Parameter:
+// [optional] {List} $extra-selectors: list of selectors along with active state
+@mixin active($extra-selectors...) {
+  $selectors: null;
+  @each $selector in $extra-selectors {
+    $selectors: prefix($selector, "&");
+    $selectors: suffix($selectors, ",");
+  }
+
+  #{$selectors} &:not([disabled]):not(:disabled).active,
+  &:not([disabled]):not(:disabled):active {
+    @content;
+  }
+}
+
+// Hover
+// Generate hover state
+@mixin hover($extra-selectors...) {
+  $selectors: null;
+  @each $selector in $extra-selectors {
+    $selectors: prefix($selector, "&");
+    $selectors: suffix($selectors, ",");
+  }
+
+  #{$selectors} &.hover,
+  &:hover {
+    @content;
+  }
+}
+
+// not-Hover
+// Generate not hovering state
+@mixin not-hover() {
+  &:not(.hover):not(:hover) {
+    @content;
+  }
+}
+
+// Focus
+// Generate focus state
+//
+// Parameter:
+// [optional] {List} $extra-selectors: list of selectors along with focus state
+@mixin focus($extra-selectors...) {
+  $selectors: null;
+  @each $selector in $extra-selectors {
+    $selectors: prefix($selector, "&");
+    $selectors: suffix($selectors, ",");
+  }
+
+  #{$selectors} &.focus,
+  &:focus {
+    @content;
+  }
+}
+
+// Hover
+// Generate hover state
+@mixin hover-focus() {
+  &.hover,
+  &:hover,
+  &.focus,
+  &:focus {
+    @content;
+  }
+}
+
+// focus-active
+// Generate focus and active state
+@mixin focus-active() {
+  &.focus,
+  &:focus,
+  &:not([disabled]):not(:disabled).active,
+  &:not([disabled]):not(:disabled):active {
+    @content;
+  }
+}
+
+@mixin hover-focus-active() {
+  &.hover,
+  &:hover,
+  &.focus,
+  &:focus,
+  &:not([disabled]):not(:disabled).active,
+  &:not([disabled]):not(:disabled):active {
+    @content;
+  }
+}
+
+// Disabled
+// Generate disabled state
+//
+// Parameter:
+// [optional] {List} $extra-selectors: list of selectors along with disabled state
+@mixin disabled($extra-selectors...) {
+  $selectors: null;
+  @each $selector in $extra-selectors {
+    $selectors: prefix($selector, "&");
+    $selectors: suffix($selectors, ",");
+  }
+
+  #{$selectors} &[disabled],
+  &:disabled {
+    @content;
+  }
+}
+
+// Disabled
+// Generate not disabled state
+//
+// Parameter:
+// [optional] {List} $extra-selectors: list of selectors along with not disabled state
+@mixin not-disabled($extra-selectors...) {
+  $selectors: null;
+  @each $selector in $extra-selectors {
+    $selectors: prefix($selector, "&");
+    $selectors: suffix($selectors, ",");
+  }
+
+  #{$selectors} &:not([disabled]):not(:disabled) {
+    @content;
+  }
+}

@@ -1,0 +1,85 @@
+@if $generate-object-classes {
+  //
+  // Doc : add Doc
+  //
+  .txt-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  //
+  // Doc : add doc
+  //
+  .txt-initial {
+    float: left;
+    padding-right: .18em;
+    @include fontsize(3em);
+    line-height: 1;
+  }
+
+  //
+  // Doc : add doc
+  //
+  .txt-break {
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  @if $enable-experimental-css {
+    //
+    // Note : Experimental and non standard properties
+    // Issue : Not Supported on IE 11
+    // Doc : add doc
+    //
+    .txt-clip {
+      // stylelint-disable-next-line declaration-no-important
+      color: transparent !important;
+      // stylelint-disable-next-line declaration-no-important, property-no-vendor-prefix
+      -webkit-background-clip: text !important;
+      // stylelint-disable-next-line declaration-no-important
+      background-clip: text !important;
+    }
+  }
+
+  //
+  // Doc : add doc
+  //
+  .txt-reset {
+    text-transform: none;
+    // Fallback for where `start` is not supported
+    text-align: left;
+    // stylelint-disable-next-line declaration-block-no-duplicate-properties
+    text-align: start;
+    text-decoration: none;
+    letter-spacing: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+    white-space: normal;
+    text-shadow: none;
+    font-family: $fontfamily-default;
+    font-weight: $fontweight-default;
+    font-style: normal;
+    line-height: $lineheight-default;
+    line-break: auto;
+  }
+
+  //
+  // Doc : add doc
+  //
+  .txt-hide {
+    // stylelint-disable-next-line declaration-no-important
+    border: 0 !important;
+    // stylelint-disable-next-line declaration-no-important
+    color: transparent !important;
+    // stylelint-disable-next-line declaration-no-important
+    background-color: transparent !important;
+    // stylelint-disable-next-line declaration-no-important
+    text-shadow: none !important;
+    // stylelint-disable-next-line font-family-no-missing-generic-family-keyword, declaration-no-important
+    font: "0/0" a !important;
+  }
+}

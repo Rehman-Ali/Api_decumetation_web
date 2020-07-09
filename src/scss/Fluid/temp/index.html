@@ -1,0 +1,2984 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Fluid Css</title>
+    <meta name="viewport" conis-10t="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" conis-10t="IE=edge" />
+
+    <!-- <link href="../../bootstrap.css" rel="stylesheet" /> -->
+    <link href="./fluid.css" rel="stylesheet" />
+    <!-- <link href="../dist/fluid.css" rel="stylesheet" /> -->
+    <!-- <link href="https://cdn.remixicon.com/releases/v1.3.0/remixicon.css" rel="stylesheet" /> -->
+    <link href="./fa/fontawesome.css" rel="stylesheet" />
+
+    <style>
+      /* body {
+        background: linear-gradient(135deg, #f7cac9 0%, #92a8d1 100%);
+      } */
+
+      .scrollbar::-webkit-scrollbar {
+        background-color: transparent;
+        height: 4px;
+        width: 4px;
+      }
+
+      .scrollbar::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      .scrollbar::-webkit-scrollbar-thumb {
+        background-color: #babac0;
+        border-radius: 99px;
+      }
+
+      .scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: #a0a0a5;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="lyt-header">
+      <button class="btn is-sld is-primary">
+        download
+      </button>
+      <nav>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+      </nav>
+    </header>
+
+    <div class="lyt-main">
+
+      <hr />
+      <div class="divider">Fluid</div>
+      <div class="divider is-left">Fluid</div>
+      <div class="divider is-right">Fluid</div>
+
+      <div class="p-10 bg-valid bg-gradient-valid h-25vh">aa</div>
+
+      <main class="grid align-middle h-min-100vh" id="container">
+        <div class="container grid align-middle">
+          <div class="column w-24">
+            <button class="btn is-out is-primary">is-primary</button>
+            <button class="btn is-out is-valid">is-valid</button>
+            <button class="btn is-out is-info">is-info</button>
+            <button class="btn is-out is-warn">is-warn</button>
+            <button class="btn is-out is-error">is-error</button>
+            <button class="btn is-out is-error" disabled>disabled</button>
+          </div>
+
+          <div class="column w-24">
+            <h5>Default theme variant:</h5>
+            <button class="btn">normal</button>
+            <button class="btn is-sld">is-sld</button>
+            <button class="btn is-out">is-outline</button>
+            <button class="btn is-min">is-minimal</button>
+          </div>
+
+          <div class="column w-24">
+            <h5>Solid button:</h5>
+            <button class="btn is-sld is-primary">normal</button>
+            <button class="btn is-sld is-primary hover">hover</button>
+            <button class="btn is-sld is-primary focus">focus</button>
+            <button class="btn is-sld is-primary active">active</button>
+            <button class="btn is-sld is-primary focus hover">focus hover</button>
+            <button class="btn is-sld is-primary focus active">focus active</button>
+            <button class="btn is-sld is-primary hover active">hover active</button>
+            <button class="btn is-sld is-primary" disabled>disabled</button>
+          </div>
+
+          <div class="column w-24">
+            <h5>Outline buttons:</h5>
+            <button class="btn is-out is-primary">normal</button>
+            <button class="btn is-out is-primary hover">hover</button>
+            <button class="btn is-out is-primary focus">focus</button>
+            <button class="btn is-out is-primary active">active</button>
+            <button class="btn is-out is-primary focus hover">focus hover</button>
+            <button class="btn is-out is-primary focus active">focus active</button>
+            <button class="btn is-out is-primary hover active">hover active</button>
+            <button class="btn is-out is-primary" disabled>disabled</button>
+          </div>
+
+          <div class="column w-24">
+            <h5>Minimal buttons:</h5>
+            <button class="btn is-min is-primary">normal</button>
+            <button class="btn is-min is-primary hover">hover</button>
+            <button class="btn is-min is-primary focus">focus</button>
+            <button class="btn is-min is-primary active">active</button>
+            <button class="btn is-min is-primary focus hover">focus hover</button>
+            <button class="btn is-min is-primary focus active">focus active</button>
+            <button class="btn is-min is-primary hover active">hover active</button>
+            <button class="btn is-min is-primary" disabled>disabled</button>
+          </div>
+        </div>
+      </main>
+
+      <main class="h-min-100vh" id="grid">
+        <div class="clr-white txt-center">
+          <div class="grid">
+            <div class="column w-1">
+              <div class="bg-dark">1</div>
+            </div>
+            <div class="column w-23">
+              <div class="bg-dark">23</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-2">
+              <div class="bg-dark">2</div>
+            </div>
+            <div class="column w-22">
+              <div class="bg-dark">22</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-3">
+              <div class="bg-dark">3</div>
+            </div>
+            <div class="column w-21">
+              <div class="bg-dark">21</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-4">
+              <div class="bg-dark">4</div>
+            </div>
+            <div class="column w-20">
+              <div class="bg-dark">20</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-5">
+              <div class="bg-dark">5</div>
+            </div>
+            <div class="column w-19">
+              <div class="bg-dark">19</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-6">
+              <div class="bg-dark">6</div>
+            </div>
+            <div class="column w-18">
+              <div class="bg-dark">18</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-7">
+              <div class="bg-dark">7</div>
+            </div>
+            <div class="column w-17">
+              <div class="bg-dark">17</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-8">
+              <div class="bg-dark">8</div>
+            </div>
+            <div class="column w-16">
+              <div class="bg-dark">16</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-9">
+              <div class="bg-dark">9</div>
+            </div>
+            <div class="column w-15">
+              <div class="bg-dark">15</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-10">
+              <div class="bg-dark">10</div>
+            </div>
+            <div class="column w-14">
+              <div class="bg-dark">14</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-11">
+              <div class="bg-dark">11</div>
+            </div>
+            <div class="column w-13">
+              <div class="bg-dark">13</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-12">
+              <div class="bg-dark">12</div>
+            </div>
+            <div class="column w-12">
+              <div class="bg-dark">12</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-13">
+              <div class="bg-dark">13</div>
+            </div>
+            <div class="column w-11">
+              <div class="bg-dark">11</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-14">
+              <div class="bg-dark">14</div>
+            </div>
+            <div class="column w-10">
+              <div class="bg-dark">10</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-15">
+              <div class="bg-dark">15</div>
+            </div>
+            <div class="column w-9">
+              <div class="bg-dark">9</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-16">
+              <div class="bg-dark">16</div>
+            </div>
+            <div class="column w-8">
+              <div class="bg-dark">8</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-17">
+              <div class="bg-dark">17</div>
+            </div>
+            <div class="column w-7">
+              <div class="bg-dark">7</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-18">
+              <div class="bg-dark">18</div>
+            </div>
+            <div class="column w-6">
+              <div class="bg-dark">6</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-19">
+              <div class="bg-dark">19</div>
+            </div>
+            <div class="column w-5">
+              <div class="bg-dark">5</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-20">
+              <div class="bg-dark">20</div>
+            </div>
+            <div class="column w-4">
+              <div class="bg-dark">4</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-21">
+              <div class="bg-dark">21</div>
+            </div>
+            <div class="column w-3">
+              <div class="bg-dark">3</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-22">
+              <div class="bg-dark">22</div>
+            </div>
+            <div class="column w-2">
+              <div class="bg-dark">2</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column w-23">
+              <div class="bg-dark">23</div>
+            </div>
+            <div class="column w-1">
+              <div class="bg-dark">1</div>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="column">
+              <div class="bg-dark">Without size</div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <main class="grid align-middle h-min-75vh" id="button">
+        <div class="column w-24">
+          <button class="btn is-sld is-loading is-primary">is-primary</button>
+          <button class="btn is-sld is-loading is-valid">is-valid</button>
+          <button class="btn is-sld is-loading is-info">is-info</button>
+          <button class="btn is-sld is-loading is-warn">is-warn</button>
+          <button class="btn is-sld is-loading is-error">is-error</button>
+          <button class="btn is-sld is-loading is-error" disabled>disabled</button>
+        </div>
+
+        <div class="column w-24">
+          <button class="btn is-out is-loading is-primary">is-primary</button>
+          <button class="btn is-out is-loading is-valid">is-valid</button>
+          <button class="btn is-out is-loading is-info">is-info</button>
+          <button class="btn is-out is-loading is-warn">is-warn</button>
+          <button class="btn is-out is-loading is-error">is-error</button>
+          <button class="btn is-out is-error" disabled>disabled</button>
+        </div>
+
+        <div class="column w-24">
+          <h5>Default theme variant:</h5>
+          <button class="btn">normal</button>
+          <button class="btn is-sld">is-solid</button>
+          <button class="btn is-out">is-outline</button>
+          <button class="btn is-min">is-minimal</button>
+        </div>
+
+        <div class="column w-24">
+          <h5>Solid button:</h5>
+          <button class="btn is-sld is-primary">normal</button>
+          <button class="btn is-sld is-primary hover">hover</button>
+          <button class="btn is-sld is-primary focus">focus</button>
+          <button class="btn is-sld is-primary active">active</button>
+          <button class="btn is-sld is-primary focus hover">focus hover</button>
+          <button class="btn is-sld is-primary focus active">focus active</button>
+          <button class="btn is-sld is-primary hover active">hover active</button>
+          <button class="btn is-sld is-primary" disabled>disabled</button>
+          <button class="btn is-sld is-primary is-loading">is-loading</button>
+        </div>
+
+        <div class="column w-24">
+          <h5>Outline buttons:</h5>
+          <button class="btn is-out is-primary">normal</button>
+          <button class="btn is-out is-primary hover">hover</button>
+          <button class="btn is-out is-primary focus">focus</button>
+          <button class="btn is-out is-primary active">active</button>
+          <button class="btn is-out is-primary focus hover">focus hover</button>
+          <button class="btn is-out is-primary focus active">focus active</button>
+          <button class="btn is-out is-primary hover active">hover active</button>
+          <button class="btn is-out is-primary" disabled>disabled</button>
+          <button class="btn is-out is-primary is-loading">is-loading</button>
+        </div>
+
+        <div class="column w-24">
+          <h5>Minimal buttons:</h5>
+          <button class="btn is-min is-primary">normal</button>
+          <button class="btn is-min is-primary hover">hover</button>
+          <button class="btn is-min is-primary focus">focus</button>
+          <button class="btn is-min is-primary active">active</button>
+          <button class="btn is-min is-primary focus hover">focus hover</button>
+          <button class="btn is-min is-primary focus active">focus active</button>
+          <button class="btn is-min is-primary hover active">hover active</button>
+          <button class="btn is-min is-primary" disabled>disabled</button>
+          <button class="btn is-min is-primary is-loading">is-loading</button>
+        </div>
+      </main>
+
+      <main class="grid align-middle h-min-75vh" id="button-loading">
+        <div class="column w-24">
+          <h5>loading States:</h5>
+          <button class="btn is-primary is-sm is-loading is-sld">is-loading</button>
+          <button class="btn is-primary is-sm is-loading is-out">is-loading</button>
+          <button class="btn is-primary is-sm is-loading is-min">is-loading</button>
+        </div>
+        <div class="column w-24">
+          <h5>loading States:</h5>
+          <button class="btn is-primary is-lg is-loading is-sld">is-loading</button>
+          <button class="btn is-primary is-lg is-loading is-out">is-loading</button>
+          <button class="btn is-primary is-lg is-loading is-min">is-loading</button>
+        </div>
+      </main>
+
+      <main class="grid align-middle h-min-75vh" id="button-icon">
+        <div class="column w-24">
+          <h5>loading States:</h5>
+          <button class="btn is-primary is-loading is-sld">is-loading</button>
+          <button class="btn is-primary is-loading is-circle is-sld">
+            <span class="icon"><i class="fas fa-coffee"></i></span>
+          </button>
+          <button class="btn is-primary is-loading is-circle is-out">
+            <span class="icon"><i class="fas fa-coffee"></i></span>
+          </button>
+          <button class="btn is-primary is-loading is-min">
+            <span class="icon"><i class="fas fa-coffee"></i></span>
+          </button>
+        </div>
+        <div class="column w-24">
+          <h5>loading States:</h5>
+          <button class="btn is-primary is-sm is-loading is-circle is-sld">
+            <span class="icon"><i class="fas fa-coffee"></i></span>
+          </button>
+          <button class="btn is-primary is-sm is-loading is-circle is-out">
+            <span class="icon"><i class="fas fa-coffee"></i></span>
+          </button>
+          <button class="btn is-primary is-sm is-loading is-min">
+            <span class="icon"><i class="fas fa-coffee"></i></span>
+          </button>
+        </div>
+        <div class="column w-24">
+          <h5>loading States:</h5>
+          <button class="btn is-primary is-loading is-circle is-sld">
+            <span class="icon"><i class="fas fa-coffee"></i></span>
+          </button>
+          <button class="btn is-primary is-loading is-circle is-out">
+            <span class="icon"><i class="fas fa-coffee"></i></span>
+          </button>
+          <button class="btn is-primary is-loading is-min">
+            <span class="icon"><i class="fas fa-coffee"></i></span>
+          </button>
+        </div>
+        <div class="column w-24">
+          <h5>loading States:</h5>
+          <button class="btn is-primary is-lg is-loading is-circle is-sld">
+            <span class="icon"><i class="fas fa-coffee"></i></span>
+          </button>
+          <button class="btn is-primary is-lg is-loading is-circle is-out">
+            <span class="icon"><i class="fas fa-coffee"></i></span>
+          </button>
+          <button class="btn is-primary is-lg is-loading is-min">
+            <span class="icon"><i class="fas fa-coffee"></i></span>
+          </button>
+        </div>
+        <div class="column w-24">
+          <button class="btn is-sld is-primary is-box">
+            <span class="icon"><i class="fas fa-coffee"></i></span>
+          </button>
+          <button class="btn is-sld is-primary is-circle">
+            <span class="icon"><i class="fas fa-coffee"></i></span>
+          </button>
+        </div>
+      </main>
+
+      <main class="grid align-middle h-min-75vh" id="button-group">
+        <div class="column w-24 w-12@sm">
+          <div class="buttons group is-y">
+            <button class="btn is-sld is-primary">One</button>
+            <button class="btn is-sld is-primary">Two</button>
+            <button class="btn is-sld is-primary">Three</button>
+            <button class="btn is-sld is-primary">Four</button>
+            <button class="btn is-sld is-primary">Five</button>
+          </div>
+          <div class="buttons group">
+            <button class="btn is-sld is-primary">One</button>
+            <button class="btn is-sld is-primary">Two</button>
+            <button class="btn is-sld is-primary">Three</button>
+            <button class="btn is-sld is-primary">Four</button>
+            <button class="btn is-sld is-primary">Five</button>
+          </div>
+          <div class="buttons group">
+            <button class="btn is-out is-primary">One</button>
+            <button class="btn is-out is-primary">Two</button>
+            <button class="btn is-out is-primary">Three</button>
+            <button class="btn is-out is-primary">Four</button>
+            <button class="btn is-out is-primary">Five</button>
+          </div>
+          <div class="buttons group">
+            <button class="btn is-min is-primary">One</button>
+            <button class="btn is-min is-primary">Two</button>
+            <button class="btn is-min is-primary">Three</button>
+            <button class="btn is-min is-primary">Four</button>
+            <button class="btn is-min is-primary">Five</button>
+            <button class="btn is-sld is-primary">Five</button>
+          </div>
+        </div>
+
+        <div class="column w-24 w-12@sm">
+          <div class="grid">
+            <div class="column">
+              <div class="buttons group is-y">
+                <button class="btn is-sld is-primary">One</button>
+                <button class="btn is-sld is-primary">Two</button>
+                <button class="btn is-sld is-primary">Three</button>
+                <button class="btn is-sld is-primary">Four</button>
+                <button class="btn is-sld is-primary">Five</button>
+              </div>
+            </div>
+            <div class="column">
+              <div class="group">
+                <button class="btn is-out is-primary">One</button>
+                <button class="btn is-out is-primary">Two</button>
+                <button class="btn is-out is-primary">Three</button>
+                <button class="btn is-out is-primary">Four</button>
+                <button class="btn is-out is-primary">Five</button>
+              </div>
+            </div>
+            <div class="column">
+              <div class="group">
+                <button class="btn is-min is-primary">One</button>
+                <button class="btn is-min is-primary">Two</button>
+                <button class="btn is-min is-primary">Three</button>
+                <button class="btn is-min is-primary">Four</button>
+                <button class="btn is-min is-primary">Five</button>
+                <button class="btn is-sld is-primary">Five</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <main class="grid align-middle h-min-75vh" id="button-size">
+        <div class="column w-24">
+          <button class="btn is-sld is-primary is-sm">is-outline</button>
+          <button class="btn is-sld is-primary ">is-outline</button>
+          <button class="btn is-sld is-primary is-lg">is-outline</button>
+        </div>
+      </main>
+
+      <main class="h-min-75vh container" id="blockquote">
+        <h3>blockquote</h3>
+        <blockquote>
+          <p>The advance of technology is based on making it fit in so that you don't really even notice it, so it's part of everyday life.</p>
+          <cite>- Bill Gates</cite>
+        </blockquote>
+
+        <blockquote class="blockquote">
+          <p>The advance of technology is based on making it fit in so that you don't really even notice it, so it's part of everyday life.</p>
+          <cite>- Bill Gates</cite>
+        </blockquote>
+      </main>
+
+      <main class="grid align-middle h-min-75vh" id="button-margin">
+        <div class="column w-24 w-6@sm">
+          <button class="btn is-sld is-primary is-sm">is-outline</button>
+          <button class="btn is-sld is-primary is-sm">is-outline</button>
+          <button class="btn is-sld is-primary is-sm">is-outline</button>
+          <button class="btn is-sld is-primary is-sm">is-outline</button>
+          <button class="btn is-sld is-primary is-sm">is-outline</button>
+          <button class="btn is-sld is-primary is-sm">is-outline</button>
+          <button class="btn is-sld is-primary is-sm">is-outline</button>
+          <button class="btn is-sld is-primary is-sm">is-outline</button>
+          <button class="btn is-sld is-primary is-sm">is-outline</button>
+        </div>
+        <div class="column w-24 w-8@sm">
+          <button class="btn is-sld is-primary">is-outline</button>
+          <button class="btn is-sld is-primary">is-outline</button>
+          <button class="btn is-sld is-primary">is-outline</button>
+          <button class="btn is-sld is-primary">is-outline</button>
+          <button class="btn is-sld is-primary">is-outline</button>
+          <button class="btn is-sld is-primary">is-outline</button>
+          <button class="btn is-sld is-primary">is-outline</button>
+          <button class="btn is-sld is-primary">is-outline</button>
+          <button class="btn is-sld is-primary">is-outline</button>
+        </div>
+        <div class="column w-24 w-10@sm">
+          <button class="btn is-sld is-primary is-lg">is-outline</button>
+          <button class="btn is-sld is-primary is-lg">is-outline</button>
+          <button class="btn is-sld is-primary is-lg">is-outline</button>
+          <button class="btn is-sld is-primary is-lg">is-outline</button>
+          <button class="btn is-sld is-primary is-lg">is-outline</button>
+          <button class="btn is-sld is-primary is-lg">is-outline</button>
+          <button class="btn is-sld is-primary is-lg">is-outline</button>
+          <button class="btn is-sld is-primary is-lg">is-outline</button>
+          <button class="btn is-sld is-primary is-lg">is-outline</button>
+        </div>
+      </main>
+
+      <main class="h-min-75vh grid px-5" id="input-different">
+        <div class="column w-24">
+          <div class="control">
+            <input class="radio" id="radio_111" name="radio" type="radio" required value="loream asidohas sad idh" />
+            <label class="label" for="radio_111">this is radio</label>
+          </div>
+
+          <div class="control">
+            <input class="checkbox" id="checkbox_111" name="checkbox" type="checkbox" required value="loream asidohas sad idh" indeterminate="true" />
+            <label class="label" for="checkbox_111">this is checkbox</label>
+          </div>
+          <input class="range" name="range" type="range" required value="loream asidohas sad idh" />
+
+          <div class="control">
+            <input class="switch" id="switch" name="switch" type="checkbox" required value="loream asidohas sad idh" checked />
+            <label class="label" for="switch">this is switch</label>
+          </div>
+
+          <input class="input" name="email" type="email" required value="loream asidohas sad idh" />
+        </div>
+      </main>
+
+      <main class="is-validated p-5" id="input-select">
+        <h2>Default</h2>
+
+        <select class="input">
+          <option>Please Select</option>
+          <optgroup label="tesing">
+            <option>Test 1</option>
+            <option>Test 2</option>
+            <option>Test 3</option>
+            <option>Test 4</option>
+            <option>Test 5</option>
+          </optgroup>
+
+          <optgroup label="tesing">
+            <option>Test 6</option>
+            <option>Test 7</option>
+            <option>Test 8</option>
+            <option>Test 9</option>
+            <option>Test 10</option>
+            <option>Test 11</option>
+          </optgroup>
+        </select>
+
+        <h2>modifiers</h2>
+
+        <select class="input is-min">
+          <option>Please Select</option>
+          <option>Test 1</option>
+          <option>Test 2</option>
+          <option>Test 3</option>
+          <option>Test 4</option>
+          <option>Test 5</option>
+          <option>Test 6</option>
+          <option>Test 7</option>
+          <option>Test 8</option>
+          <option>Test 9</option>
+          <option>Test 10</option>
+          <option>Test 11</option>
+        </select>
+
+        <h2>sizing</h2>
+
+        <select class="input is-sm">
+          <option>Please Select</option>
+          <optgroup label="tesing">
+            <option>Test 1</option>
+            <option>Test 2</option>
+            <option>Test 3</option>
+            <option>Test 4</option>
+            <option>Test 5</option>
+          </optgroup>
+
+          <optgroup label="tesing">
+            <option>Test 6</option>
+            <option>Test 7</option>
+            <option>Test 8</option>
+            <option>Test 9</option>
+            <option>Test 10</option>
+            <option>Test 11</option>
+          </optgroup>
+        </select>
+
+        <select class="input is-lg">
+          <option>Please Select</option>
+          <optgroup label="tesing">
+            <option>Test 1</option>
+            <option>Test 2</option>
+            <option>Test 3</option>
+            <option>Test 4</option>
+            <option>Test 5</option>
+          </optgroup>
+
+          <optgroup label="tesing">
+            <option>Test 6</option>
+            <option>Test 7</option>
+            <option>Test 8</option>
+            <option>Test 9</option>
+            <option>Test 10</option>
+            <option>Test 11</option>
+          </optgroup>
+        </select>
+
+        <h2>form validation</h2>
+
+        <select class="input" required>
+          <option value="">Please Select</option>
+          <option>Test 1</option>
+          <option>Test 2</option>
+          <option>Test 3</option>
+          <option>Test 4</option>
+          <option>Test 5</option>
+          <option>Test 6</option>
+          <option>Test 7</option>
+          <option>Test 8</option>
+          <option>Test 9</option>
+          <option>Test 10</option>
+          <option>Test 11</option>
+        </select>
+
+        <select class="input" required>
+          <option value="">Please Select</option>
+          <option>Test 1</option>
+          <option>Test 2</option>
+          <option value selected>Test 3</option>
+          <option>Test 4</option>
+          <option>Test 5</option>
+          <option>Test 6</option>
+          <option>Test 7</option>
+          <option>Test 8</option>
+          <option>Test 9</option>
+          <option>Test 10</option>
+          <option>Test 11</option>
+        </select>
+
+        <h2>Group</h2>
+
+        <div class="group">
+          <div class="addon">This is addon</div>
+          <select class="input">
+            <option value="">Please Select</option>
+            <option>Test 1</option>
+            <option>Test 2</option>
+            <option>Test 3</option>
+            <option>Test 4</option>
+            <option>Test 5</option>
+            <option>Test 6</option>
+            <option>Test 7</option>
+
+            <option>Test 8</option>
+            <option>Test 9</option>
+            <option>Test 10</option>
+            <option>Test 11</option>
+          </select>
+          <button class="btn is-sld is-primary">Info</button>
+        </div>
+
+        <div class="group">
+          <label class="addon control">
+            <input class="radio" type="radio" />
+            <div class="label">aa</div>
+          </label>
+          <select class="input">
+            <option value="">Please Select</option>
+            <option>Test 1</option>
+            <option>Test 2</option>
+            <option>Test 3</option>
+            <option>Test 4</option>
+            <option>Test 5</option>
+            <option>Test 6</option>
+            <option>Test 7</option>
+            <option>Test 8</option>
+            <option>Test 9</option>
+            <option>Test 10</option>
+            <option>Test 11</option>
+          </select>
+          <button class="btn is-sld is-primary">Info</button>
+        </div>
+      </main>
+
+      <main class="is-validated p-5" id="input-file">
+        <div class="group">
+          <label class="control has-floating-label">
+            <input class="input is-min" type="text" placeholder=" " />
+            <label class="label">testing</label>
+          </label>
+          <div class="addon">
+            <input class id="radio_TEst" type="checkbox" />
+            <label class="mb-0" for="radio_TEst">testing</label>
+          </div>
+        </div>
+
+        <h2>Default</h2>
+        <input class="file" id="file" type="file" />
+
+        <h2>Sizing</h2>
+
+        <div class="control">
+          <input class="file" id="file" type="file" />
+          <label class="label btn is-sm is-sld is-primary" for="file">
+            <div class="icon is-left"><i class="far fa-coffee"></i></div>
+            testing upload
+          </label>
+        </div>
+
+        <div class="group">
+          <div class="control">
+            <input class="file" id="file" type="file" />
+            <label class="label input is-sm" for="file">
+              File name
+            </label>
+          </div>
+          <button class="btn is-sm is-out is-primary">
+            <div class="icon is-left"><i class="far fa-coffee"></i></div>
+            upload now
+          </button>
+        </div>
+
+        <div class="control">
+          <input class="file" id="file" type="file" />
+          <label class="label btn is-lg is-sld is-primary" for="file">
+            <div class="icon is-left"><i class="far fa-coffee"></i></div>
+            testing upload
+          </label>
+        </div>
+
+        <div class="group">
+          <div class="control">
+            <input class="file" id="file" type="file" />
+            <label class="label input is-lg" for="file">
+              File name
+            </label>
+          </div>
+          <button class="btn is-lg is-out is-primary">
+            <div class="icon is-left"><i class="far fa-coffee"></i></div>
+            upload now
+          </button>
+        </div>
+
+        <h2>Snippets</h2>
+
+        <form>
+          <div class="control">
+            <input class="file" id="file" type="file" required />
+            <label class="btn is-sld is-primary" for="file">
+              <div class="mb-6">
+                <div class="icon is-left"><i class="far fa-coffee"></i></div>
+                Upload
+              </div>
+              <div class="filename input">
+                File Name
+              </div>
+            </label>
+          </div>
+          <button class="btn is-primary is-out" type="submit">Submit</button>
+        </form>
+
+        <div class="control">
+          <input class="file" id="filethis" type="file" />
+          <label class="label btn is-sld is-primary" for="filethis">
+            <div class="icon is-left"><i class="far fa-coffee"></i></div>
+            testing upload
+          </label>
+        </div>
+
+        <div class="group">
+          <div class="control">
+            <input class="file" id="file" type="file" />
+            <label class="label input" for="file">
+              File name
+            </label>
+          </div>
+          <button class="btn is-out is-primary">
+            <div class="icon is-left"><i class="far fa-coffee"></i></div>
+            upload now
+          </button>
+        </div>
+        <h2>Group</h2>
+
+        <div class="group">
+          <label class="mb-0 label btn is-sld is-primary" for="file">
+            <div class="icon is-left"><i class="far fa-coffee"></i></div>
+            testing upload
+          </label>
+          <input class="input" id="text" type="text" />
+          <button class="btn is-out is-primary">upload now</button>
+        </div>
+      </main>
+
+      <main class="h-min-75vh grid px-5" id="input-different-size">
+        <div class="column w-24 w-12@sm w-6@md">
+          <div class="control">
+            <input class="radio" id="radio_111" name="radio" type="radio" />
+            <label class="label" for="radio_111">this is radio</label>
+          </div>
+
+          <div class="control">
+            <input class="radio is-valid" id="radio_222" name="radio" type="radio" />
+            <label class="label" for="radio_222">this is radio</label>
+          </div>
+
+          <div class="control">
+            <input class="radio is-error" id="radio_333" name="radio" type="radio" />
+            <label class="label" for="radio_333">this is radio</label>
+          </div>
+
+          <div class="control">
+            <input class="radio is-error" id="radio_444" name="radio" type="radio" disabled />
+            <label class="label" for="radio_444">this is radio</label>
+          </div>
+
+          <div class="control">
+            <input class="radio is-error" id="radio_444" name="radio" type="radio" checked disabled />
+            <label class="label" for="radio_444">this is radio</label>
+          </div>
+
+          <div class="control is-sm">
+            <input class="radio is-valid" id="radio_555" name="radio" type="radio" />
+            <label class="label" for="radio_555">this is radio</label>
+          </div>
+
+          <div class="control is-lg">
+            <input class="radio is-valid" id="radio_666" name="radio" type="radio" />
+            <label class="label" for="radio_666">this is radio</label>
+          </div>
+        </div>
+
+        <div class="column w-24 w-12@sm w-6@md">
+          <div class="control">
+            <input class="checkbox" id="checkbox_111" name="checkbox" type="checkbox" indeterminate="true" />
+            <label class="label" for="checkbox_111">this is checkbox</label>
+          </div>
+
+          <div class="control">
+            <input class="checkbox is-valid" id="checkbox_222" name="checkbox" type="checkbox" indeterminate="true" />
+            <label class="label" for="checkbox_222">this is checkbox</label>
+          </div>
+
+          <div class="control">
+            <input class="checkbox is-error" id="checkbox_333" name="checkbox" type="checkbox" indeterminate="true" />
+            <label class="label" for="checkbox_333">this is checkbox</label>
+          </div>
+
+          <div class="control">
+            <input class="checkbox is-error" id="checkbox_444" name="checkbox" type="checkbox" disabled />
+            <label class="label" for="checkbox_444">this is checkbox</label>
+          </div>
+
+          <div class="control">
+            <input class="checkbox is-error" id="checkbox_444" name="checkbox" type="checkbox" indeterminate="true" disabled />
+            <label class="label" for="checkbox_444">this is checkbox</label>
+          </div>
+
+          <div class="control">
+            <input class="checkbox is-error" id="checkbox_444" name="checkbox" type="checkbox" checked disabled />
+            <label class="label" for="checkbox_444">this is checkbox</label>
+          </div>
+
+          <div class="control is-sm">
+            <input class="checkbox is-valid" id="checkbox_555" name="checkbox" type="checkbox" indeterminate="true" />
+            <label class="label" for="checkbox_555">this is checkbox</label>
+          </div>
+
+          <div class="control is-lg">
+            <input class="checkbox is-valid" id="checkbox_666" name="checkbox" type="checkbox" indeterminate="true" />
+            <label class="label" for="checkbox_666">this is checkbox</label>
+          </div>
+        </div>
+
+        <div class="column w-24 w-12@sm w-6@md">
+          <input class="range" name="range" type="range" value="50" />
+
+          <input class="range" name="range" type="range" value="50" disabled />
+
+          <input class="range is-valid" id="range_222" name="range" type="range" value="50" />
+
+          <input class="range is-info" id="range_333" name="range" type="range" value="50" />
+
+          <input class="range is-warn" id="range_333" name="range" type="range" value="50" />
+
+          <input class="range is-error" id="range_333" name="range" type="range" value="50" />
+
+          <input class="range is-primary is-sm" id="range_333" name="range" type="range" value="50" />
+
+          <input class="range is-dark is-lg" id="range_444" name="range" type="range" value="50" />
+        </div>
+
+        <div class="column w-24 w-12@sm w-6@md">
+          <div class="control">
+            <input class="switch" id="switch_111" name="switch" type="checkbox" />
+            <label class="label" for="switch_111">this is switch</label>
+          </div>
+
+          <div class="control">
+            <input class="switch is-valid" id="switch_222" name="switch" type="checkbox" />
+            <label class="label" for="switch_222">this is switch</label>
+          </div>
+
+          <div class="control">
+            <input class="switch is-error" id="switch_333" name="switch" type="checkbox" />
+            <label class="label" for="switch_333">this is switch</label>
+          </div>
+
+          <div class="control">
+            <input class="switch is-error" id="switch_444" name="switch" type="checkbox" disabled />
+            <label class="label" for="switch_444">this is switch</label>
+          </div>
+
+          <div class="control">
+            <input class="switch is-error" id="switch_444" name="switch" type="checkbox" checked disabled />
+            <label class="label" for="switch_444">this is switch</label>
+          </div>
+
+          <div class="control is-sm">
+            <input class="switch is-valid" id="switch_555" name="switch" type="checkbox" />
+            <label class="label" for="switch_555">this is switch</label>
+          </div>
+
+          <div class="control is-lg">
+            <input class="switch is-valid" id="switch_666" name="switch" type="checkbox" />
+            <label class="label" for="switch_666">this is switch</label>
+          </div>
+        </div>
+      </main>
+
+      <main class="lyt-main container" id="group-test">
+        <h2>Input group</h2>
+
+        <h4>Multiple inputs</h4>
+
+        <div class="group mb-6">
+          <input class="input" type="text" />
+          <input class="input" type="text" />
+        </div>
+
+        <div class="group mb-6">
+          <input class="input" type="text" />
+          <input class="input" type="text" />
+          <input class="input" type="text" />
+        </div>
+
+        <h4>Text addons</h4>
+
+        <div class="group mb-6">
+          <div class="addon bg-light">
+            <span>@</span>
+          </div>
+          <input class="input" type="text" placeholder="Username" />
+        </div>
+
+        <div class="group mb-6">
+          <input class="input" type="text" placeholder="Recipient's username" />
+          <div class="addon bg-light">
+            <span>@example.com</span>
+          </div>
+        </div>
+
+        <div class="group mb-6">
+          <div class="addon bg-light"><span>Addon</span></div>
+          <input class="input" type="text" />
+          <div class="addon bg-light"><span>Addon</span></div>
+        </div>
+
+        <div class="group mb-6">
+          <span class="addon bg-light">Addon</span>
+          <span class="addon bg-light">Addon</span>
+          <span class="addon bg-light">Addon</span>
+          <input class="input" type="text" />
+          <span class="addon bg-light">Addon</span>
+          <span class="addon bg-light">Addon</span>
+          <span class="addon bg-light">Addon</span>
+        </div>
+
+        <div class="group mb-6">
+          <span class="addon bg-light">Addon</span>
+          <span class="addon bg-light">Addon</span>
+          <span class="addon bg-light">Addon</span>
+          <input class="input" type="text" />
+          <input class="input" type="text" />
+          <span class="addon bg-light">Addon</span>
+          <span class="addon bg-light">Addon</span>
+          <span class="addon bg-light">Addon</span>
+        </div>
+
+        <div class="group mb-6">
+          <div class="addon bg-light">
+            <span class="is-sm" id="inputGroup-sizing-sm">Small</span>
+          </div>
+          <input class="input is-sm" type="text" aria-describedby="inputGroup-sizing-sm" aria-label="Small" />
+        </div>
+
+        <div class="group mb-6">
+          <div class="addon bg-light">
+            <span id="inputGroup-sizing-default">Default</span>
+          </div>
+          <input class="input" type="text" aria-describedby="inputGroup-sizing-default" aria-label="Default" />
+        </div>
+
+        <div class="group is-lg">
+          <div class="addon bg-light">
+            <span id="inputGroup-sizing-lg">Large</span>
+          </div>
+          <input class="input" type="text" aria-describedby="inputGroup-sizing-sm" aria-label="Large" />
+        </div>
+
+        <h4>Btn addons</h4>
+
+        <div class="group mb-6">
+          <button class="btn is-out is-secondary" type="button">Button</button>
+          <input class="input" type="text" placeholder="testing" />
+        </div>
+
+        <div class="group mb-6">
+          <input class="input" type="text" placeholder="Recipient's username" />
+          <button class="btn is-out is-secondary" type="button">Button</button>
+        </div>
+
+        <div class="group mb-6">
+          <button class="btn is-out is-secondary" type="button">1</button>
+          <button class="btn is-out is-secondary" type="button">2</button>
+          <button class="btn is-out is-secondary" type="button">3</button>
+          <input class="input" type="text" placeholder="testing" />
+          <button class="btn is-out is-secondary" type="button">1</button>
+          <button class="btn is-out is-secondary" type="button">2</button>
+          <button class="btn is-out is-secondary" type="button">3</button>
+        </div>
+
+        <h3>Split button</h3>
+
+        <div class="group mb-6">
+          <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">1</button>
+          <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">2</button>
+          <button class="btn is-out is-secondary dropdown-trigger" data-toggle="dropdown" type="button">3</button>
+          <input class="input" type="text" />
+          <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">1</button>
+          <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">2</button>
+          <button class="btn is-out is-secondary dropdown-trigger" data-toggle="dropdown" type="button">3</button>
+        </div>
+
+        <div class="group mb-6">
+          <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">1</button>
+          <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">2</button>
+          <button class="btn is-out is-secondary dropdown-trigger" data-toggle="dropdown" type="button">3</button>
+          <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">1</button>
+          <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">2</button>
+          <button class="btn is-out is-secondary dropdown-trigger" data-toggle="dropdown" type="button">3</button>
+          <input class="input" type="text" />
+          <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">1</button>
+          <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">2</button>
+          <button class="btn is-out is-secondary dropdown-trigger" data-toggle="dropdown" type="button">3</button>
+          <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">1</button>
+          <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">2</button>
+          <button class="btn is-out is-secondary dropdown-trigger" data-toggle="dropdown" type="button">3</button>
+        </div>
+
+        <h4>Custom select</h4>
+
+        <div class="group mb-6">
+          <div class="addon bg-light"><span>Addon</span></div>
+          <select class="input">
+            <option selected="">Custom select</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+
+        <div class="group mb-6">
+          <select class="input">
+            <option selected="">Custom select</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+          <div class="addon bg-light"><span>Addon</span></div>
+        </div>
+
+        <div class="group mb-6">
+          <button class="btn is-out is-warn border-warn clr-warn font-bolder" type="button">Button</button>
+          <select class="input" id="inputGroupSelect03">
+            <option selected="">Custom select</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+
+        <div class="group mb-6">
+          <select class="input" id="inputGroupSelect04">
+            <option selected="">Custom select</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+          <button class="btn is-out is-warn border-warn clr-warn font-bolder" type="button">Button</button>
+        </div>
+
+        <h4>Custom file input</h4>
+
+        <div class="group mb-6">
+          <div class="addon bg-light"><span>Addon</span></div>
+          <div class="control">
+            <input class="file" id="file_1" type="file" />
+            <label class="input label" for="file_1">
+              Choose File
+            </label>
+          </div>
+          <button class="btn is-out is-primary bg-light">
+            Upload
+          </button>
+        </div>
+
+        <div class="group mb-6">
+          <div class="control">
+            <input class="file" id="file_2" type="file" />
+            <label class="input label" for="file_2">
+              Choose File
+            </label>
+          </div>
+          <button class="btn is-out is-primary bg-light">
+            Upload
+          </button>
+          <div class="addon bg-light"><span>Addon</span></div>
+        </div>
+
+        <div class="group mb-6">
+          <button class="btn is-out is-warn border-warn clr-warn font-bolder" type="button">Button</button>
+          <div class="control">
+            <input class="file" id="file_3" type="file" />
+            <label class="input label" for="file_3">
+              Choose File
+            </label>
+          </div>
+          <button class="btn is-out is-primary bg-light">
+            Upload
+          </button>
+        </div>
+
+        <div class="group mb-6">
+          <div class="control">
+            <input class="file" id="file_4" type="file" />
+            <label class="input label" for="file_4">
+              Choose File
+            </label>
+          </div>
+          <button class="btn is-out is-primary bg-light">
+            Upload
+          </button>
+          <button class="btn is-out is-warn border-warn clr-warn font-bolder" type="button">Button</button>
+        </div>
+
+        <h4>Validation</h4>
+
+        <div class="is-validated">
+          <h5>Multiple inputs</h5>
+
+          <div class="group mb-6">
+            <div class="control">
+              <input class="input" type="text" required />
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+            </div>
+            <div class="control">
+              <input class="input" type="text" required />
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+            </div>
+          </div>
+
+          <div class="group mb-6">
+            <div class="control">
+              <input class="input" type="text" required />
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+            </div>
+            <div class="control">
+              <input class="input" type="text" required />
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+            </div>
+            <div class="control">
+              <input class="input" type="text" required />
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+            </div>
+          </div>
+
+          <h5>Text addon</h5>
+
+          <div class="group mb-6">
+            <div class="addon bg-light">@</div>
+            <div class="control">
+              <input class="input is-invalid" type="text" required placeholder="Username" />
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+            </div>
+          </div>
+
+          <div class="group mb-6">
+            <div class="control">
+              <input class="input is-invalid" type="text" required placeholder="Recipient's username" />
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+            </div>
+            <div class="addon bg-light">
+              <span>@example.com</span>
+            </div>
+          </div>
+
+          <div class="group mb-6">
+            <div class="addon bg-light"><span>Addon</span></div>
+            <div class="control">
+              <input class="input is-invalid" type="text" required />
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+            </div>
+            <div class="addon bg-light"><span>Addon</span></div>
+          </div>
+
+          <div class="group mb-6">
+            <span class="addon bg-light">Addon</span>
+            <span class="addon bg-light">Addon</span>
+            <span class="addon bg-light">Addon</span>
+            <div class="control">
+              <input class="input is-invalid" type="text" required />
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+            </div>
+            <span class="addon bg-light">Addon</span>
+            <span class="addon bg-light">Addon</span>
+            <span class="addon bg-light">Addon</span>
+          </div>
+
+          <div class="group mb-6">
+            <div class="addon bg-light">
+              <span id="inputGroup-sizing-sm">Small</span>
+            </div>
+            <div class="control">
+              <input class="input is-invalid" type="text" aria-describedby="inputGroup-sizing-sm" aria-label="Small" required />
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+            </div>
+          </div>
+
+          <div class="group mb-6">
+            <div class="addon bg-light">
+              <span id="inputGroup-sizing-default">Default</span>
+            </div>
+            <div class="control">
+              <input class="input is-invalid" type="text" aria-describedby="inputGroup-sizing-default" aria-label="Default" required />
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+            </div>
+          </div>
+
+          <div class="group is-lg">
+            <div class="addon bg-light">
+              <span id="inputGroup-sizing-lg">Large</span>
+            </div>
+            <div class="control">
+              <input class="input is-invalid" type="text" aria-describedby="inputGroup-sizing-sm" aria-label="Large" required />
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+            </div>
+          </div>
+
+          <h6>Btn addons</h6>
+
+          <div class="group mb-6">
+            <button class="btn is-out is-secondary" type="button">Button</button>
+            <div class="control">
+              <input class="input is-invalid" type="text" required placeholder="testing" />
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+            </div>
+          </div>
+
+          <div class="group mb-6">
+            <button class="btn is-out is-secondary" type="button">Button</button>
+            <div class="control">
+              <input class="input is-invalid" type="text" required placeholder="Recipient's username" />
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+            </div>
+          </div>
+
+          <div class="group mb-6">
+            <button class="btn is-out is-secondary" type="button">1</button>
+            <button class="btn is-out is-secondary" type="button">2</button>
+            <button class="btn is-out is-secondary" type="button">3</button>
+            <div class="control">
+              <input class="input is-invalid" type="text" required placeholder="testing" />
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+            </div>
+            <button class="btn is-out is-secondary" type="button">1</button>
+            <button class="btn is-out is-secondary" type="button">2</button>
+            <button class="btn is-out is-secondary" type="button">3</button>
+          </div>
+
+          <h6>Split button</h6>
+
+          <div class="group mb-6">
+            <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">1</button>
+            <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">2</button>
+            <button class="btn is-out is-secondary dropdown-trigger" data-toggle="dropdown" type="button">3</button>
+            <div class="control">
+              <input class="input is-invalid" type="text" required />
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+            </div>
+            <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">1</button>
+            <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">2</button>
+            <button class="btn is-out is-secondary dropdown-trigger" data-toggle="dropdown" type="button">3</button>
+          </div>
+
+          <div class="group mb-6">
+            <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">1</button>
+            <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">2</button>
+            <button class="btn is-out is-secondary dropdown-trigger" data-toggle="dropdown" type="button">3</button>
+            <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">1</button>
+            <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">2</button>
+            <button class="btn is-out is-secondary dropdown-trigger" data-toggle="dropdown" type="button">3</button>
+            <div class="control">
+              <input class="input is-invalid" type="text" required />
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+            </div>
+            <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">1</button>
+            <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">2</button>
+            <button class="btn is-out is-secondary dropdown-trigger" data-toggle="dropdown" type="button">3</button>
+            <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">1</button>
+            <button class="btn is-out is-secondary" data-toggle="dropdown" type="button">2</button>
+            <button class="btn is-out is-secondary dropdown-trigger" data-toggle="dropdown" type="button">3</button>
+          </div>
+
+          <h6>Custom select</h6>
+
+          <div class="group mb-6">
+            <div class="addon bg-light"><span>Addon</span></div>
+            <div class="control">
+              <select class="input is-invalid" required>
+                <option value selected>Custom select</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+            </div>
+          </div>
+
+          <div class="group mb-6">
+            <div class="control">
+              <select required class="input is-invalid">
+                <option value="" selected="">Custom select</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+            </div>
+            <div class="addon bg-light"><span>Addon</span></div>
+          </div>
+
+          <div class="group mb-6">
+            <button class="btn is-out is-warn border-warn clr-warn font-bolder" type="button">Button</button>
+            <div class="control">
+              <select required class="input is-invalid" id="inputGroupSelect03">
+                <option value="" selected="">Custom select</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+            </div>
+          </div>
+
+          <div class="group mb-6">
+            <div class="control">
+              <select required class="input is-invalid" id="inputGroupSelect04">
+                <option value="" selected="">Custom select</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+            </div>
+            <button class="btn is-out is-warn border-warn clr-warn font-bolder" type="button">Button</button>
+          </div>
+
+          <h6>Custom file inputs</h6>
+
+          <div class="group mb-6">
+            <div class="addon bg-light"><span>Addon</span></div>
+            <div class="control">
+              <input required class="file" id="file_5" type="file" />
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+              <label class="input label" for="file_5">
+                Choose File
+              </label>
+            </div>
+
+            <!-- <div class="custom-file">
+                <input class="custom-file-input is-invalid" id="customFile" type="file" />
+                <label class="custom-file-label" for="customFile">Choose file</label>
+                <div class="feedback is-invalid">
+                  Please provide a valid zip.
+                </div>
+              </div> -->
+          </div>
+
+          <div class="group mb-6">
+            <div class="control">
+              <input required class="file" id="file_6" type="file" />
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+              <label class="input label" for="file_6">
+                Choose File
+              </label>
+            </div>
+
+            <div class="addon bg-light"><span>Addon</span></div>
+          </div>
+
+          <div class="group mb-6">
+            <button class="btn is-out is-warn border-warn clr-warn font-bolder" type="button">Button</button>
+            <div class="control">
+              <input required class="file" id="file_7" type="file" />
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+              <label class="input label" for="file_7">
+                Choose File
+              </label>
+            </div>
+          </div>
+
+          <div class="group mb-6">
+            <div class="control">
+              <input required class="file" id="file_8" type="file" />
+              <div class="feedback is-invalid">
+                Please provide a valid zip.
+              </div>
+              <label class="input label" for="file_8">
+                Choose File
+              </label>
+            </div>
+            <button class="btn is-out is-warn border-warn clr-warn font-bolder" type="button">Button</button>
+          </div>
+        </div>
+      </main>
+
+      <main class="h-min-75vh" id="form-validation">
+        <form class="grid" action="#">
+          <div class="column w-24 w-12@md is-validated">
+            <select class="input" required>
+              <option value="">Please Select</option>
+              <option>Test 1</option>
+              <option>Test 2</option>
+              <option>Test 3</option>
+              <option>Test 4</option>
+              <option>Test 5</option>
+              <option>Test 6</option>
+              <option>Test 7</option>
+              <option>Test 8</option>
+              <option>Test 9</option>
+              <option>Test 10</option>
+              <option>Test 11</option>
+            </select>
+
+            <select class="input is-min" required>
+              <option value="">Please Select</option>
+              <option>Test 1</option>
+              <option selected="">Test 2</option>
+              <option>Test 3</option>
+              <option>Test 4</option>
+              <option>Test 5</option>
+              <option>Test 6</option>
+              <option>Test 7</option>
+              <option>Test 8</option>
+              <option>Test 9</option>
+              <option>Test 10</option>
+              <option>Test 11</option>
+            </select>
+
+            <input class="input" name="email" type="email" required />
+
+            <div class="control">
+              <input class="input" id="exampleInputEmail2" type="text" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" required />
+              <label class="label" for="exampleInputEmail2">Email address</label>
+              <div class="feedback is-valid">VALID</div>
+              <div class="feedback is-invalid">INVALID</div>
+              <small>We'll never share your email with anyone else.</small>
+            </div>
+
+            <div class="control is-primary has-floating-label">
+              <input class="input is-min" name="name" type="text" placeholder=" " value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" required />
+              <label class="label">Label</label>
+              <div class="feedback is-valid">VALID</div>
+              <div class="feedback is-invalid">INVALID</div>
+            </div>
+
+            <small class="--form-text">We'll never share your email with anyone else.</small>
+            <div class="control is-primary">
+              <input class="input" id="exampleInputEmail2" name="email" type="email" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" required />
+              <div class="feedback is-valid">VALID</div>
+              <div class="feedback is-invalid">INVALID</div>
+              <small class="--form-text">we'll never share your email with anyone else.</small>
+            </div>
+
+            <div class="control">
+              <input class="radio" id="radio_form_required" name="radio" type="radio" required />
+              <label class="label" for="radio_form_required">this is radio</label>
+              <div class="feedback is-valid">VALID</div>
+              <div class="feedback is-invalid">INVALID</div>
+            </div>
+
+            <div class="control">
+              <input class="checkbox" id="checkbox_form_required" name="checkbox" type="checkbox" required />
+              <label class="label" for="checkbox_form_required">this is checkbox</label>
+              <div class="feedback is-invalid">You must agree to accept the Terms and Conditions</div>
+            </div>
+
+            <div class="control">
+              <input class="switch" id="switch_form_required" name="switch" type="checkbox" required />
+              <label class="label" for="switch_form_required">this is switch</label>
+              <div class="feedback is-valid">VALID</div>
+              <div class="feedback is-invalid">INVALID</div>
+            </div>
+          </div>
+
+          <div class="column w-24 w-12@md">
+            <select class="input" required>
+              <option>Please Select</option>
+              <option>Test 1</option>
+              <option>Test 2</option>
+              <option>Test 3</option>
+              <option>Test 4</option>
+              <option>Test 5</option>
+              <option>Test 6</option>
+              <option>Test 7</option>
+              <option>Test 8</option>
+              <option>Test 9</option>
+              <option>Test 10</option>
+              <option>Test 11</option>
+            </select>
+
+            <select class="input is-min" required>
+              <option>Please Select</option>
+              <option>Test 1</option>
+              <option>Test 2</option>
+              <option>Test 3</option>
+              <option>Test 4</option>
+              <option>Test 5</option>
+              <option>Test 6</option>
+              <option>Test 7</option>
+              <option>Test 8</option>
+              <option>Test 9</option>
+              <option>Test 10</option>
+              <option>Test 11</option>
+            </select>
+
+            <input class="input" name="email" type="email" required />
+
+            <div class="control">
+              <input class="input" id="exampleInputEmail2" type="text" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" required />
+              <label class="label" for="exampleInputEmail2">Email address</label>
+              <div class="feedback is-valid">VALID</div>
+              <div class="feedback is-invalid">INVALID</div>
+              <small class="--form-text">We'll never share your email with anyone else.</small>
+            </div>
+
+            <div class="control is-primary has-floating-label">
+              <input class="input is-min" name="name" type="text" placeholder=" " value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" required />
+              <label class="label">Label</label>
+              <div class="feedback is-valid">VALID</div>
+              <div class="feedback is-invalid">INVALID</div>
+            </div>
+
+            <small class="--form-text">We'll never share your email with anyone else.</small>
+            <div class="control is-primary">
+              <input class="input" id="exampleInputEmail2" name="email" type="email" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" required />
+              <div class="feedback is-valid">VALID</div>
+              <div class="feedback is-invalid">INVALID</div>
+              <small class="--form-text">We'll never share your email with anyone else.</small>
+            </div>
+
+            <div class="control">
+              <input class="radio" id="radio_form_required" name="radio" type="radio" required />
+              <label class="label" for="radio_form_required">this is radio</label>
+              <div class="feedback is-valid">VALID</div>
+              <div class="feedback is-invalid">INVALID</div>
+            </div>
+
+            <div class="control">
+              <input class="checkbox" id="checkbox_form_required" name="checkbox" type="checkbox" required />
+              <label class="label" for="checkbox_form_required">this is checkbox</label>
+              <div class="feedback is-invalid">You must agree to accept the Terms and Conditions</div>
+            </div>
+
+            <div class="control">
+              <input class="switch" id="switch_form_required" name="switch" type="checkbox" required />
+              <label class="label" for="switch_form_required">this is switch</label>
+              <div class="feedback is-valid">VALID</div>
+              <div class="feedback is-invalid">INVALID</div>
+            </div>
+          </div>
+        </form>
+      </main>
+
+      <main class="h-min-75vh" id="input">
+        <div class="is-12@md">
+          <input class="input" type="text" value="value" placeholder="placeholder" />
+          <input class="input is-min" type="text" value="value" placeholder="placeholder" />
+
+          <div class="grid align-middle">
+            <div class="column w-24 w-12@sm"><input class="input" type="text" placeholder="placeholder" /></div>
+            <div class="column w-24 w-12@sm"><input class="input is-min" type="text" value="value" placeholder="placeholder" /></div>
+          </div>
+
+          <div class="control has-icon-left is-sm">
+            <input class="input is-primary" type="text" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" />
+            <div class="feedback is-valid">VALID</div>
+            <div class="feedback is-invalid">INVALID</div>
+
+            <div class="icon is-left"><i class="far fa-coffee"></i></div>
+          </div>
+
+          <div class="control has-icon-left">
+            <input class="input is-primary" type="text" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" />
+            <div class="feedback is-valid">VALID</div>
+            <div class="feedback is-invalid">INVALID</div>
+            <div class="icon is-left"><i class="far fa-coffee"></i></div>
+          </div>
+
+          <div class="control has-icon-left is-lg">
+            <input class="input is-primary" type="text" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" />
+            <div class="feedback is-valid">VALID</div>
+            <div class="feedback is-invalid">INVALID</div>
+            <div class="icon is-left"><i class="far fa-coffee"></i></div>
+          </div>
+
+          <div class="grid align-middle">
+            <div class="column w-24">
+              <div class="group">
+                <button class="btn is-out is-primary">B</button>
+                <button class="btn is-sld is-primary">Info</button>
+                <input class="input is-valid" type="text" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" />
+              </div>
+            </div>
+          </div>
+
+          <div class="grid align-middle">
+            <div class="column w-24">
+              <div class="group is-lg">
+                <button class="btn is-out is-primary">B</button>
+                <button class="btn is-sld is-primary">Info</button>
+                <input class="input is-valid" type="text" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" />
+              </div>
+            </div>
+          </div>
+
+          <div class="grid align-middle">
+            <div class="column w-24">
+              <div class="group">
+                <div class="addon">This is addon</div>
+                <button class="btn is-out is-primary">B</button>
+                <button class="btn is-sld is-primary">Info</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid align-middle">
+            <div class="column w-24">
+              <div class="group">
+                <div class="addon">div</div>
+                <div class="control has-icon-left">
+                  <input class="input" type="text" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" />
+                  <div class="icon is-left"><i class="far fa-crosshairs"></i></div>
+                </div>
+                <button class="btn is-sld is-primary">Info</button>
+                <button class="btn is-out is-primary">B</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid align-middle">
+            <div class="column w-24">
+              <div class="group is-lg">
+                <div class="addon">div</div>
+                <div class="control has-icon-left">
+                  <input class="input" type="text" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" />
+                  <div class="icon is-left"><i class="far fa-crosshairs"></i></div>
+                </div>
+                <button class="btn is-sld is-primary">Info</button>
+                <button class="btn is-out is-primary">B</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid align-middle">
+            <div class="column w-24 w-12@sm">
+              <input class="input is-primary" type="text" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" placeholder="placeholder" />
+            </div>
+            <div class="column w-24 w-12@sm">
+              <input class="input is-secondary" type="text" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" placeholder="placeholder" />
+            </div>
+          </div>
+
+          <div class="grid align-middle">
+            <div class="column w-24 w-12@sm">
+              <input class="input is-info" type="text" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" placeholder="placeholder" />
+            </div>
+            <div class="column w-24 w-12@sm">
+              <input class="input is-valid" type="text" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" placeholder="placeholder" />
+            </div>
+            <div class="column w-24 w-12@sm">
+              <input class="input is-warn" type="text" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" placeholder="placeholder" />
+            </div>
+            <div class="column w-24 w-12@sm">
+              <input class="input is-error" type="text" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" placeholder="placeholder" />
+            </div>
+          </div>
+
+          <div class="grid align-middle">
+            <div class="column w-24 w-12@sm">
+              <input class="input is-info has-icon" type="text" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" placeholder="placeholder" />
+            </div>
+            <div class="column w-24 w-12@sm">
+              <input class="input is-valid has-icon" type="text" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" placeholder="placeholder" />
+            </div>
+
+            <div class="column w-24 w-12@sm">
+              <div class="control has-floating-label">
+                <input class="input is-primary" id="exampleInputEmail22" name="name" type="text" placeholder=" " />
+                <div class="feedback is-valid">VALID</div>
+                <div class="feedback is-invalid">INVALID</div>
+                <label class="label" for="exampleInputEmail22">Label</label>
+              </div>
+            </div>
+
+            <div class="column w-24 w-12@sm">
+              <div class="control has-floating-label">
+                <input class="input is-min is-primary" id="exampleInputEmail3" type="text" value="aaa" placeholder=" " />
+                <div class="feedback is-valid">VALID</div>
+                <div class="feedback is-invalid">INVALID</div>
+                <label class="label" for="exampleInputEmail3">Label</label>
+              </div>
+            </div>
+
+            <div class="column w-24 w-12@sm">
+              <input class="input is-warn has-icon" type="text" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" placeholder="placeholder" />
+            </div>
+            <div class="column w-24 w-12@sm">
+              <input class="input is-error has-icon" type="text" value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, placeat tempora tempore libero corrupti tenetur optio" placeholder="placeholder" />
+            </div>
+
+            <div class="column w-24">
+              <textarea class="input" readonly cols="30" rows="10">
+         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad harum reiciendis a mollitia sint? Soluta eaque iusto perspiciatis molestias ex expedita doloribus voluptatum mollitia repudiandae non, perferendis, iure odio ab?</textarea>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <main class="is-validated p-5" id="dropdown">
+        <h2>Default</h2>
+
+        <div class="dropdown">
+          <button class="btn is-sld is-primary dropdown-trigger">My Dropdown</button>
+          <div class="menu is-primary">
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <div class="divider">this is divider</div>
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <div class="dropdown is-right">
+              <button class="menu-item dropdown-trigger">Sub Dropdown</button>
+              <div class="menu">
+                <button class="menu-item">Ask</button>
+                <div class="dropdown">
+                  <button class="menu-item dropdown-trigger">Sub Dropdown</button>
+                  <div class="menu">
+                    <button class="menu-item">Ask</button>
+                    <button class="menu-item">Another action</button>
+                    <div class="dropdown is-left">
+                      <button class="menu-item dropdown-trigger">Sub Dropdown</button>
+                      <div class="menu">
+                        <button class="menu-item">Ask</button>
+                        <div class="dropdown is-top" href="#">
+                          <button class="menu-item dropdown-trigger">Sub Dropdown</button>
+                          <div class="menu">
+                            <button class="menu-item">Ask</button>
+                            <button class="menu-item">Another action</button>
+                            <button class="menu-item">Something else here</button>
+                          </div>
+                        </div>
+                        <button class="menu-item">Another action</button>
+                        <button class="menu-item">Something else here</button>
+                      </div>
+                    </div>
+                    <button class="menu-item">Something else here</button>
+                  </div>
+                </div>
+                <button class="menu-item">Another action</button>
+                <button class="menu-item">Something else here</button>
+              </div>
+            </div>
+            <button class="menu-item">Another action</button>
+            <button class="menu-item">Something else here</button>
+          </div>
+        </div>
+
+        <h2>With nested menu</h2>
+
+        <div class="dropdown is-hover">
+          <button class="btn is-sld is-primary dropdown-trigger">My Dropdown</button>
+          <div class="menu is-primary">
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <div class="menu" href="#">
+              <button class="menu-item menu-trigger">Sub menu</button>
+              <button class="menu-item">Ask</button>
+              <button class="menu-item">Another action</button>
+              <button class="menu-item">Something else here</button>
+              <div class="menu" href="#">
+                <button class="menu-item menu-trigger">Sub menu</button>
+                <button class="menu-item">Ask</button>
+                <button class="menu-item">Another action</button>
+                <button class="menu-item">Something else here</button>
+                <div class="menu" href="#">
+                  <button class="menu-item menu-trigger">Sub menu</button>
+                  <button class="menu-item">Ask</button>
+                  <button class="menu-item">Another action</button>
+                  <button class="menu-item">Something else here</button>
+                  <div class="menu" href="#">
+                    <button class="menu-item menu-trigger">Sub menu</button>
+                    <button class="menu-item">Ask</button>
+                    <button class="menu-item">Another action</button>
+                    <button class="menu-item">Something else here</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <div class="divider">this is divider</div>
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <div class="menu" href="#">
+              <button class="menu-item menu-trigger">Sub menu</button>
+              <button class="menu-item">Ask</button>
+              <button class="menu-item">Another action</button>
+              <button class="menu-item">Something else here</button>
+              <div class="menu" href="#">
+                <button class="menu-item menu-trigger">Sub menu</button>
+                <button class="menu-item">Ask</button>
+                <button class="menu-item">Another action</button>
+                <button class="menu-item">Something else here</button>
+                <div class="menu" href="#">
+                  <button class="menu-item menu-trigger">Sub menu</button>
+                  <button class="menu-item">Ask</button>
+                  <button class="menu-item">Another action</button>
+                  <button class="menu-item">Something else here</button>
+                  <div class="menu" href="#">
+                    <button class="menu-item menu-trigger">Sub menu</button>
+                    <button class="menu-item">Ask</button>
+                    <button class="menu-item">Another action</button>
+                    <button class="menu-item">Something else here</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="menu-item">Another action</button>
+            <button class="menu-item">Something else here</button>
+          </div>
+        </div>
+
+        <h2>modifiers</h2>
+
+        <div class="dropdown is-hover">
+          <button class="btn is-sld is-primary dropdown-trigger">My Dropdown</button>
+          <div class="menu is-primary">
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <div class="divider">this is divider</div>
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <div class="dropdown is-right">
+              <button class="menu-item dropdown-trigger">Sub Dropdown</button>
+              <div class="menu">
+                <button class="menu-item">Ask</button>
+                <div class="dropdown">
+                  <button class="menu-item dropdown-trigger">Sub Dropdown</button>
+                  <div class="menu">
+                    <button class="menu-item">Ask</button>
+                    <button class="menu-item">Another action</button>
+                    <div class="dropdown is-left">
+                      <button class="menu-item dropdown-trigger">Sub Dropdown</button>
+                      <div class="menu">
+                        <button class="menu-item">Ask</button>
+                        <div class="dropdown is-top" href="#">
+                          <button class="menu-item dropdown-trigger">Sub Dropdown</button>
+                          <div class="menu">
+                            <button class="menu-item">Ask</button>
+                            <button class="menu-item">Another action</button>
+                            <button class="menu-item">Something else here</button>
+                          </div>
+                        </div>
+                        <button class="menu-item">Another action</button>
+                        <button class="menu-item">Something else here</button>
+                      </div>
+                    </div>
+                    <button class="menu-item">Something else here</button>
+                  </div>
+                </div>
+                <button class="menu-item">Another action</button>
+                <button class="menu-item">Something else here</button>
+              </div>
+            </div>
+            <button class="menu-item">Another action</button>
+            <button class="menu-item">Something else here</button>
+          </div>
+        </div>
+
+        <h2>sizing</h2>
+
+        <div class="dropdown is-hover is-sm">
+          <button class="btn is-min is-primary dropdown-trigger">My Dropdown</button>
+          <div class="menu is-primary">
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <div class="menu" href="#">
+              <button class="menu-item menu-trigger">Sub menu</button>
+              <button class="menu-item">Ask</button>
+              <button class="menu-item">Another action</button>
+              <button class="menu-item">Something else here</button>
+              <div class="menu" href="#">
+                <button class="menu-item menu-trigger">Sub menu</button>
+                <button class="menu-item">Ask</button>
+                <button class="menu-item">Another action</button>
+                <button class="menu-item">Something else here</button>
+                <div class="menu" href="#">
+                  <button class="menu-item menu-trigger">Sub menu</button>
+                  <button class="menu-item">Ask</button>
+                  <button class="menu-item">Another action</button>
+                  <button class="menu-item">Something else here</button>
+                  <div class="menu" href="#">
+                    <button class="menu-item menu-trigger">Sub menu</button>
+                    <button class="menu-item">Ask</button>
+                    <button class="menu-item">Another action</button>
+                    <button class="menu-item">Something else here</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <div class="divider">this is divider</div>
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <div class="menu" href="#">
+              <button class="menu-item menu-trigger">Sub menu</button>
+              <button class="menu-item">Ask</button>
+              <button class="menu-item">Another action</button>
+              <button class="menu-item">Something else here</button>
+              <div class="menu" href="#">
+                <button class="menu-item menu-trigger">Sub menu</button>
+                <button class="menu-item">Ask</button>
+                <button class="menu-item">Another action</button>
+                <button class="menu-item">Something else here</button>
+                <div class="menu" href="#">
+                  <button class="menu-item menu-trigger">Sub menu</button>
+                  <button class="menu-item">Ask</button>
+                  <button class="menu-item">Another action</button>
+                  <button class="menu-item">Something else here</button>
+                  <div class="menu" href="#">
+                    <button class="menu-item menu-trigger">Sub menu</button>
+                    <button class="menu-item">Ask</button>
+                    <button class="menu-item">Another action</button>
+                    <button class="menu-item">Something else here</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="menu-item">Another action</button>
+            <button class="menu-item">Something else here</button>
+          </div>
+        </div>
+
+        <div class="dropdown is-hover is-lg">
+          <button class="btn is-min is-primary dropdown-trigger">My Dropdown</button>
+          <div class="menu is-primary">
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <div class="menu" href="#">
+              <button class="menu-item menu-trigger">Sub menu</button>
+              <button class="menu-item">Ask</button>
+              <button class="menu-item">Another action</button>
+              <button class="menu-item">Something else here</button>
+              <div class="menu" href="#">
+                <button class="menu-item menu-trigger">Sub menu</button>
+                <button class="menu-item">Ask</button>
+                <button class="menu-item">Another action</button>
+                <button class="menu-item">Something else here</button>
+                <div class="menu" href="#">
+                  <button class="menu-item menu-trigger">Sub menu</button>
+                  <button class="menu-item">Ask</button>
+                  <button class="menu-item">Another action</button>
+                  <button class="menu-item">Something else here</button>
+                  <div class="menu" href="#">
+                    <button class="menu-item menu-trigger">Sub menu</button>
+                    <button class="menu-item">Ask</button>
+                    <button class="menu-item">Another action</button>
+                    <button class="menu-item">Something else here</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <div class="divider">this is divider</div>
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <button class="menu-item">Ask</button>
+            <div class="menu" href="#">
+              <button class="menu-item menu-trigger">Sub menu</button>
+              <button class="menu-item">Ask</button>
+              <button class="menu-item">Another action</button>
+              <button class="menu-item">Something else here</button>
+              <div class="menu" href="#">
+                <button class="menu-item menu-trigger">Sub menu</button>
+                <button class="menu-item">Ask</button>
+                <button class="menu-item">Another action</button>
+                <button class="menu-item">Something else here</button>
+                <div class="menu" href="#">
+                  <button class="menu-item menu-trigger">Sub menu</button>
+                  <button class="menu-item">Ask</button>
+                  <button class="menu-item">Another action</button>
+                  <button class="menu-item">Something else here</button>
+                  <div class="menu" href="#">
+                    <button class="menu-item menu-trigger">Sub menu</button>
+                    <button class="menu-item">Ask</button>
+                    <button class="menu-item">Another action</button>
+                    <button class="menu-item">Something else here</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="menu-item">Another action</button>
+            <button class="menu-item">Something else here</button>
+          </div>
+        </div>
+
+        <h5>in header</h5>
+
+        <header class="lyt-header justify-between" style="z-index: 2;">
+          <div class="dropdown is-mega">
+            <button class="btn is-sld is-primary dropdown-trigger">Dropdown</button>
+            <div class="menu is-valid is-box is-round-bottom-sm" style="padding: 1rem;">
+
+              <div class="grid" style="margin-bottom: 1rem;">
+                <a href="#" class="column txt-center border-bottom border-right">
+                  <img class="img" src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Running.png">
+                  <div>Running</div>
+                </a>
+                <a href="#" class="column txt-center border-bottom border-right">
+                  <img class="img" src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Basketball.png">
+                  <div>Basketball</div>
+                </a>
+                <a href="#" class="column txt-center border-bottom border-right">
+                  <img class="img" src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Football.png">
+                  <div>Football</div>
+                </a>
+                <a href="#" class="column txt-center border-bottom">
+                  <img class="img" src="http://content.nike.com/content/dam/one-nike/globalAssets/menu_header_images/OneNike_Global_Nav_Icons_Soccer.png">
+                  <div>Soccer</div>
+                </a>
+              </div>
+
+              <div class="txt-center">
+                <button class="btn">Men</button>
+                <button class="btn">Women</button>
+                <button class="btn">Kids</button>
+                <button class="btn">Sport</button>
+              </div>
+            </div>
+          </div>
+
+        </header>
+
+      </main>
+
+      <main class="is-validated p-5" id="menu">
+        <h2>Default</h2>
+
+        <div class="grid">
+          <div class="column">
+            <div class="menu is-primary">
+              <div class="divider">Normal Button</div>
+              <button class="menu-item" href="#">Ask</button>
+              <button class="menu-item" href="#">Ask</button>
+              <button class="menu-item" href="#">Ask</button>
+              <div class="divider">active</div>
+              <button class="menu-item active" href="#">Another action</button>
+              <div class="divider">disabled</div>
+              <button class="menu-item" href="#" disabled>Something else here</button>
+              <div class="divider">Nested</div>
+              <ul class="menu" href="#">
+                <button class="menu-item menu-trigger" href="#">Sub menu</button>
+                <button class="menu-item" href="#">Ask</button>
+                <button class="menu-item" href="#">Another action</button>
+                <button class="menu-item" href="#">Something else here</button>
+                <ul class="menu" href="#">
+                  <button class="menu-item menu-trigger" href="#">Menu</button>
+                  <ul class="menu" href="#">
+                    <button class="menu-item menu-trigger" href="#">Bikes</button>
+                    <div class="divider">Bikes</div>
+                    <button class="menu-item" href="#">Bikes 1</button>
+                    <button class="menu-item" href="#">Bikes 2</button>
+                    <button class="menu-item" href="#">Bikes 3</button>
+                    <div class="divider"></div>
+                    <button class="menu-item" href="#">Bikes 1</button>
+                    <button class="menu-item" href="#">Bikes 2</button>
+                    <button class="menu-item" href="#">Bikes 3</button>
+                  </ul>
+                  <ul class="menu" href="#">
+                    <button class="menu-item menu-trigger" href="#">Cars</button>
+                    <div class="divider">Cars</div>
+                    <button class="menu-item" href="#">Cars 1</button>
+                    <button class="menu-item" href="#">Cars 2</button>
+                    <button class="menu-item" href="#">Cars 3</button>
+                    <div class="divider"></div>
+                    <button class="menu-item" href="#">Cars 1</button>
+                    <button class="menu-item" href="#">Cars 2</button>
+                    <button class="menu-item" href="#">Cars 3</button>
+                  </ul>
+                </ul>
+                <button class="menu-item" href="#">Ask</button>
+                <button class="menu-item" href="#">Another action</button>
+                <button class="menu-item" href="#">Something else here</button>
+              </ul>
+            </div>
+          </div>
+
+          <div class="column">
+            <ul class="menu is-valid">
+              <div class="divider">Normal List</div>
+              <li class="menu-item" href="#">Ask</li>
+              <li class="menu-item" href="#">Ask</li>
+              <li class="menu-item" href="#">Ask</li>
+              <div class="divider">active</div>
+              <li class="menu-item active" href="#">Another action</li>
+              <div class="divider">disabled</div>
+              <li class="menu-item" href="#" disabled>Something else here</li>
+              <div class="divider">Nested</div>
+              <ul class="menu" href="#">
+                <li class="menu-item menu-trigger" href="#">Sub menu</li>
+                <li class="menu-item" href="#">Ask</li>
+                <li class="menu-item" href="#">Another action</li>
+                <li class="menu-item" href="#">Something else here</li>
+                <ul class="menu" href="#">
+                  <li class="menu-item menu-trigger" href="#">Menu</li>
+                  <ul class="menu" href="#">
+                    <li class="menu-item menu-trigger" href="#">Bikes</li>
+                    <div class="divider">Bikes</div>
+                    <li class="menu-item" href="#">Bikes 1</li>
+                    <li class="menu-item" href="#">Bikes 2</li>
+                    <li class="menu-item" href="#">Bikes 3</li>
+                    <div class="divider"></div>
+                    <li class="menu-item" href="#">Bikes 1</li>
+                    <li class="menu-item" href="#">Bikes 2</li>
+                    <li class="menu-item" href="#">Bikes 3</li>
+                  </ul>
+                  <ul class="menu" href="#">
+                    <li class="menu-item menu-trigger" href="#">Cars</li>
+                    <div class="divider">Cars</div>
+                    <li class="menu-item" href="#">Cars 1</li>
+                    <li class="menu-item" href="#">Cars 2</li>
+                    <li class="menu-item" href="#">Cars 3</li>
+                    <div class="divider"></div>
+                    <li class="menu-item" href="#">Cars 1</li>
+                    <li class="menu-item" href="#">Cars 2</li>
+                    <li class="menu-item" href="#">Cars 3</li>
+                  </ul>
+                </ul>
+                <li class="menu-item" href="#">Ask</li>
+                <li class="menu-item" href="#">Another action</li>
+                <li class="menu-item" href="#">Something else here</li>
+              </ul>
+            </ul>
+          </div>
+
+          <div class="column">
+            <div class="menu is-error">
+              <div class="divider">Normal Div</div>
+              <div class="menu-item" href="#">Ask</div>
+              <div class="menu-item" href="#">Ask</div>
+              <div class="menu-item" href="#">Ask</div>
+              <div class="divider">active</div>
+              <div class="menu-item active" href="#">Another action</div>
+              <div class="divider">disabled</div>
+              <div class="menu-item" href="#" disabled>Something else here</div>
+              <div class="divider">Nested</div>
+              <ul class="menu" href="#">
+                <li class="menu-item menu-trigger" href="#">Sub menu</li>
+                <li class="menu-item" href="#">Ask</li>
+                <li class="menu-item" href="#">Another action</li>
+                <li class="menu-item" href="#">Something else here</li>
+                <ul class="menu" href="#">
+                  <li class="menu-item menu-trigger" href="#">Menu</li>
+                  <ul class="menu" href="#">
+                    <li class="menu-item menu-trigger" href="#">Bikes</li>
+                    <div class="divider">Bikes</div>
+                    <li class="menu-item" href="#">Bikes 1</li>
+                    <li class="menu-item" href="#">Bikes 2</li>
+                    <li class="menu-item" href="#">Bikes 3</li>
+                    <div class="divider"></div>
+                    <li class="menu-item" href="#">Bikes 1</li>
+                    <li class="menu-item" href="#">Bikes 2</li>
+                    <li class="menu-item" href="#">Bikes 3</li>
+                  </ul>
+                  <ul class="menu" href="#">
+                    <li class="menu-item menu-trigger" href="#">Cars</li>
+                    <div class="divider">Cars</div>
+                    <li class="menu-item" href="#">Cars 1</li>
+                    <li class="menu-item" href="#">Cars 2</li>
+                    <li class="menu-item" href="#">Cars 3</li>
+                    <div class="divider"></div>
+                    <li class="menu-item" href="#">Cars 1</li>
+                    <li class="menu-item" href="#">Cars 2</li>
+                    <li class="menu-item" href="#">Cars 3</li>
+                  </ul>
+                </ul>
+                <li class="menu-item" href="#">Ask</li>
+                <li class="menu-item" href="#">Another action</li>
+                <li class="menu-item" href="#">Something else here</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="column">
+            <ul class="menu is-info">
+              <div class="divider">Normal Anchor</div>
+              <a class="menu-item" href="#">Ask</a>
+              <a class="menu-item" href="#">Ask</a>
+              <a class="menu-item" href="#">Ask</a>
+              <div class="divider">active</div>
+              <a class="menu-item active" href="#">Another action</a>
+              <div class="divider">disabled</div>
+              <a class="menu-item" href="#" disabled>Something else here</a>
+              <div class="divider">Nested</div>
+              <ul class="menu" href="#">
+                <li class="menu-item menu-trigger" href="#">Sub menu</li>
+                <li class="menu-item" href="#">Ask</li>
+                <li class="menu-item" href="#">Another action</li>
+                <li class="menu-item" href="#">Something else here</li>
+                <ul class="menu" href="#">
+                  <li class="menu-item menu-trigger" href="#">Menu</li>
+                  <ul class="menu" href="#">
+                    <li class="menu-item menu-trigger" href="#">Bikes</li>
+                    <div class="divider">Bikes</div>
+                    <li class="menu-item" href="#">Bikes 1</li>
+                    <li class="menu-item" href="#">Bikes 2</li>
+                    <li class="menu-item" href="#">Bikes 3</li>
+                    <div class="divider"></div>
+                    <li class="menu-item" href="#">Bikes 1</li>
+                    <li class="menu-item" href="#">Bikes 2</li>
+                    <li class="menu-item" href="#">Bikes 3</li>
+                  </ul>
+                  <ul class="menu" href="#">
+                    <li class="menu-item menu-trigger" href="#">Cars</li>
+                    <div class="divider">Cars</div>
+                    <li class="menu-item" href="#">Cars 1</li>
+                    <li class="menu-item" href="#">Cars 2</li>
+                    <li class="menu-item" href="#">Cars 3</li>
+                    <div class="divider"></div>
+                    <li class="menu-item" href="#">Cars 1</li>
+                    <li class="menu-item" href="#">Cars 2</li>
+                    <li class="menu-item" href="#">Cars 3</li>
+                  </ul>
+                </ul>
+                <li class="menu-item" href="#">Ask</li>
+                <li class="menu-item" href="#">Another action</li>
+                <li class="menu-item" href="#">Something else here</li>
+              </ul>
+            </ul>
+          </div>
+        </div>
+
+        <h2>sizing</h2>
+
+        <div class="grid">
+          <div class="column">
+            <div class="menu is-secondary is-sm">
+              <div class="divider">is-sm</div>
+              <button class="menu-item" href="#">Ask</button>
+              <button class="menu-item" href="#">Ask</button>
+              <button class="menu-item" href="#">Ask</button>
+              <div class="divider">active</div>
+              <button class="menu-item active" href="#">Another action</button>
+              <div class="divider">disabled</div>
+              <button class="menu-item" href="#" disabled>Something else here</button>
+              <div class="divider">Nested</div>
+              <ul class="menu" href="#">
+                <button class="menu-item menu-trigger" href="#">Sub menu</button>
+                <button class="menu-item" href="#">Ask</button>
+                <button class="menu-item" href="#">Another action</button>
+                <button class="menu-item" href="#">Something else here</button>
+                <ul class="menu" href="#">
+                  <button class="menu-item menu-trigger" href="#">Menu</button>
+                  <ul class="menu" href="#">
+                    <button class="menu-item menu-trigger" href="#">Bikes</button>
+                    <div class="divider">Bikes</div>
+                    <button class="menu-item" href="#">Bikes 1</button>
+                    <button class="menu-item" href="#">Bikes 2</button>
+                    <button class="menu-item" href="#">Bikes 3</button>
+                    <div class="divider"></div>
+                    <button class="menu-item" href="#">Bikes 1</button>
+                    <button class="menu-item" href="#">Bikes 2</button>
+                    <button class="menu-item" href="#">Bikes 3</button>
+                  </ul>
+                  <ul class="menu" href="#">
+                    <button class="menu-item menu-trigger" href="#">Cars</button>
+                    <div class="divider">Cars</div>
+                    <button class="menu-item" href="#">Cars 1</button>
+                    <button class="menu-item" href="#">Cars 2</button>
+                    <button class="menu-item" href="#">Cars 3</button>
+                    <div class="divider"></div>
+                    <button class="menu-item" href="#">Cars 1</button>
+                    <button class="menu-item" href="#">Cars 2</button>
+                    <button class="menu-item" href="#">Cars 3</button>
+                  </ul>
+                </ul>
+                <button class="menu-item" href="#">Ask</button>
+                <button class="menu-item" href="#">Another action</button>
+                <button class="menu-item" href="#">Something else here</button>
+              </ul>
+            </div>
+          </div>
+
+          <div class="column">
+            <ul class="menu is-dark is-lg">
+              <div class="divider">is-lg</div>
+              <button class="menu-item" href="#">Ask</button>
+              <button class="menu-item" href="#">Ask</button>
+              <button class="menu-item" href="#">Ask</button>
+              <div class="divider">active</div>
+              <button class="menu-item active" href="#">Another action</button>
+              <div class="divider">disabled</div>
+              <button class="menu-item" href="#" disabled>Something else here</button>
+              <div class="divider">Nested</div>
+              <ul class="menu" href="#">
+                <button class="menu-item menu-trigger" href="#">Sub menu</button>
+                <button class="menu-item" href="#">Ask</button>
+                <button class="menu-item" href="#">Another action</button>
+                <button class="menu-item" href="#">Something else here</button>
+                <ul class="menu" href="#">
+                  <button class="menu-item menu-trigger" href="#">Menu</button>
+                  <ul class="menu" href="#">
+                    <button class="menu-item menu-trigger" href="#">Bikes</button>
+                    <div class="divider">Bikes</div>
+                    <button class="menu-item" href="#">Bikes 1</button>
+                    <button class="menu-item" href="#">Bikes 2</button>
+                    <button class="menu-item" href="#">Bikes 3</button>
+                    <div class="divider"></div>
+                    <button class="menu-item" href="#">Bikes 1</button>
+                    <button class="menu-item" href="#">Bikes 2</button>
+                    <button class="menu-item" href="#">Bikes 3</button>
+                  </ul>
+                  <ul class="menu" href="#">
+                    <button class="menu-item menu-trigger" href="#">Cars</button>
+                    <div class="divider">Cars</div>
+                    <button class="menu-item" href="#">Cars 1</button>
+                    <button class="menu-item" href="#">Cars 2</button>
+                    <button class="menu-item" href="#">Cars 3</button>
+                    <div class="divider"></div>
+                    <button class="menu-item" href="#">Cars 1</button>
+                    <button class="menu-item" href="#">Cars 2</button>
+                    <button class="menu-item" href="#">Cars 3</button>
+                  </ul>
+                </ul>
+                <button class="menu-item" href="#">Ask</button>
+                <button class="menu-item" href="#">Another action</button>
+                <button class="menu-item" href="#">Something else here</button>
+              </ul>
+            </ul>
+          </div>
+        </div>
+
+        <h2>Menu with html content</h2>
+
+        <div class="menu">
+          <div class="menu-trigger menu-item">open menu</div>
+          <div>
+            <div class="column h-25vh bg-primary">111</div>
+            <div class="column h-25vh bg-valid">222</div>
+            <div class="column h-25vh bg-error">333</div>
+          </div>
+        </div>
+
+      </main>
+
+      <main class="grid align-middle h-min-75vh" id="list">
+        <div class="column w-24 w-12@sm">
+          <ul class="list">
+            <li class="list-item">items</li>
+            <li class="list-item">items</li>
+            <ul>
+              <li class="list-item">items</li>
+              <li class="list-item">items</li>
+              <ul>
+                <li class="list-item">items</li>
+                <li class="list-item">items</li>
+              </ul>
+            </ul>
+            <li class="list-item">items</li>
+            <li class="list-item">items</li>
+          </ul>
+        </div>
+
+        <div class="column w-24 w-12@sm">
+          <div class="group mb-6 is-lg">
+            <li class="addon">items</li>
+            <li class="addon">items</li>
+            <li class="addon">items</li>
+            <li class="addon">items</li>
+          </div>
+          <div class="group mb-6 is-lg">
+            <a class="addon" href="#">items</a>
+            <a class="addon" href="#">items</a>
+            <a class="addon" href="#">items</a>
+            <a class="addon" href="#">items</a>
+          </div>
+        </div>
+        <div class="column w-24 w-lg@sm is-12">
+          <div class="group mb-6 is-lg is-y">
+            <div class="addon float">
+              <div class="float-left">items</div>
+              <div class="float-right">icon</div>
+            </div>
+            <div class="addon">items</div>
+            <div class="addon">items</div>
+            <div class="addon">items</div>
+          </div>
+          <div class="group mb-6 is-lg is-y">
+            <a class="addon" href="https://www.google.com">items</a>
+            <a class="addon" href="#">items</a>
+            <a class="addon" href="#">items</a>
+            <a class="addon" href="#">items</a>
+          </div>
+        </div>
+        <div class="column w-24 w-12@sm">
+          <div class="group mb-6 is-lg is-borderless is-y">
+            <div class="addon bg-white">borderless</div>
+            <div class="addon bg-white">borderless</div>
+            <div class="addon bg-white">borderless</div>
+            <div class="addon bg-white">borderless</div>
+          </div>
+
+          <div class="group mb-6 is-lg is-borderless is-y">
+            <button class="btn is-error is-out">borderless</button>
+            <button class="btn is-error is-out">borderless</button>
+            <button class="btn is-error is-out">borderless</button>
+            <button class="btn is-error is-out">borderless</button>
+          </div>
+        </div>
+      </main>
+
+      <main class="mt-5 h-min-75vh" id="float">
+        <p>
+          In this example, the image is taller than the element containing it, and it is floated, so it overflows outside of its container:
+        </p>
+
+        <div class="brdr brdr-wide brdr-valid bg-info ">
+          <h2>Without Float/Clearfix</h2>
+          <img class="float-right" src="https://picsum.photos/200/300" alt="Pineapple" width="170" height="170" />
+          <div class="brdr brdr-wide brdr-error">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum...
+          </div>
+        </div>
+
+        <p>Add the Float/clearfix hack to the containing element, to fix this problem:</p>
+
+        <div class="brdr brdr-wide brdr-valid bg-info float">
+          <h2>With Float/Clearfix</h2>
+          <img class="float-right" src="https://picsum.photos/200/300" alt="Pineapple" width="170" height="170" />
+          <div class="brdr brdr-wide brdr-error">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum...
+          </div>
+        </div>
+      </main>
+
+      <main class="grid align-middle h-min-75vh" id="icon">
+        <div>
+          <button class="btn is-sld is-primary">
+            <div class="icon bg-black is-lg clr-valid">
+              <i class="fas fa-shield-alt title"></i>
+            </div>
+          </button>
+        </div>
+      </main>
+
+      <main class="grid align-middle h-min-75vh" id="link">
+        <div class="column w-24 w-20@sm">
+          <a href="#">link</a>
+        </div>
+
+        <div class="column w-24 w-20@sm">
+          <ol class="breadcrumb">
+            <li class="active" aria-current="page">
+              Home
+              <ol class="breadcrumb">
+                <li class="active" aria-current="page">
+                  Home
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+
+        <div class="column w-24 w-20@sm">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item" data-separator="/">
+              <a href="#">
+                Home
+              </a>
+            </li>
+            <li class="breadcrumb-item" data-separator="/" aria-current="page">
+              Library
+            </li>
+          </ol>
+        </div>
+
+        <div class="column w-24 w-20@sm">
+          <ol class="breadcrumb is-sm">
+            <li class="breadcrumb-item" data-separator="/">
+              <a href="#">
+                Home
+              </a>
+            </li>
+            <li class="breadcrumb-item" data-separator="/">
+              <a href="#">
+                Library
+              </a>
+            </li>
+            <li class="breadcrumb-item" data-separator="/" aria-current="page">
+              Data
+            </li>
+          </ol>
+        </div>
+
+        <div class="column w-24 w-20@sm">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="#">
+                Home
+              </a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="#">
+                Library
+              </a>
+            </li>
+            <li class="breadcrumb-item" aria-current="page">
+              Data
+            </li>
+          </ol>
+        </div>
+
+        <div class="column w-24 w-20@sm">
+          <ol class="breadcrumb is-lg">
+            <li class="breadcrumb-item" data-separator="/">
+              <a href="#">
+                Home
+              </a>
+            </li>
+            <li class="breadcrumb-item" data-separator="/">
+              <a href="#">
+                Library
+              </a>
+            </li>
+            <li class="breadcrumb-item" data-separator="/" aria-current="page">
+              Data
+            </li>
+          </ol>
+        </div>
+      </main>
+
+      <main class="h-min-75vh" id="typography">
+        <fieldset>
+          <legend>aaa</legend>
+          aaa
+        </fieldset>
+        <div class="title is-lg">title</div>
+        <div class="title">title</div>
+        <div class="title is-sm">title</div>
+
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+
+        <h4>قتلى وجرحى في هجوم للحوثيين على عرض عسكري في اليمن</h4>
+
+        <p>
+          <span class="txt-initial">‏گ</span>
+          المرأة اللبنانية تخوض صراعاً في مواجهة 12 محكمة شرعية في ما يتعلق بحقوقها الشخصية كامرأة وكأم في حال رغبتها في الانفصال أو الطلاق وتحرم غالبا من حق
+          حضانة أطفالها في سن مبكرة. تقرير مراسلة بي بي سي للشؤون الدينية يلقي الضوء على هذه المسألة. قبل ساعة واحدة أعراس في قبرص في انتظار إقرار الزواج المدني
+          في لبنان قانون تزويج القاصرات يثير جدلا في لبنان
+        </p>
+
+        <p>
+          <span class="txt-initial">سياات</span>
+          المرأة اللبنانية تخوض صراعاً في مواجهة 12 محكمة شرعية في ما يتعلق بحقوقها الشخصية كامرأة وكأم في حال رغبتها في الانفصال أو الطلاق وتحرم غالبا من حق
+          حضانة أطفالها في سن مبكرة. تقرير مراسلة بي بي سي للشؤون الدينية يلقي الضوء على هذه المسألة. قبل ساعة واحدة أعراس في قبرص في انتظار إقرار الزواج المدني
+          في لبنان قانون تزويج القاصرات يثير جدلا في لبنان
+        </p>
+
+        <div>Some text. Right-to-left direction</div>
+
+        <h4>Paragraph</h4>
+        <p>
+          <span class="txt-initial">L</span>orem, ipsum Ducimus atque laboriosam rerum! Quo unde necessitatibus placeat voluptates quaerat doloremque ad quidem
+          dicta aliquid, dolorem maiores sint quos laudantium iste. Facere. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas nisi explicabo amet
+          odit dolor porro magni molestias natus harum officia ducimus nihil quod modi, minus ipsa. Eaque accusamus alias natus.
+        </p>
+
+        <h4>Sub and sup</h4>
+        <div>normal <sub>sub</sub><sup>sup</sup></div>
+
+        <form>
+          <fieldset>
+            <legend>testing</legend>
+            Name: <input class="input" type="text" /><br />
+            Email: <input class="input" type="text" /><br />
+            Date of birth: <input class="input" type="text" />
+          </fieldset>
+        </form>
+      </main>
+
+      <main class="grid align-middle h-min-75vh" id="aspect">
+        <!-- <div class="embed">
+                <iframe src="https://www.youtube.com/embed/supeBvZWyy8" width="560" height="315" framebrdr="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+              </div> -->
+      </main>
+
+      <main class="grid align-middle h-min-75vh" id="heading">
+        <div>
+          <mark>This is heading</mark>
+          <h2>This is heading</h2>
+          <h3>This is heading</h3>
+          <h4>This is heading</h4>
+          <h5>This is heading</h5>
+          <h6>This is heading</h6>
+        </div>
+      </main>
+
+      <main class="pt-5 h-min-100vh" id="code">
+        <p>
+          Please, press <kbd><kbd>Shift</kbd>+<kbd>A</kbd></kbd> <kbd><kbd>Shift + A</kbd></kbd>
+        </p>
+
+        <p>
+          Save the document by pressing <kbd><kbd>Ctrl</kbd>+<kbd>S</kbd></kbd>
+        </p>
+
+        before <code class="my-5"> ctrl + , </code> after {/*
+        <div class="is-15">
+          <pre class="my-5"><code data-lang="Css">.some-class {
+               background-color: red;
+        }</code></pre>
+          <pre class="my-5"><code data-lang="Css">.some-class {
+          Lorem ipsum, Quod, quibusdam! Laboriosam rerum ut dolorem similique tempora libero. Laboriosam cupiditate nihil perferendis quod fugit, harum magni voluptatem temporibus praesentium. Sunt, soluta?
+        }</code></pre>
+        </div>
+        */}
+      </main>
+
+      <main class="h-min-75vh" id="colors-test">
+        <div class="grid has-gap-sm">
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-blue w-24">blue</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-indigo w-24">indigo</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-geekblue w-24">geekblue</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-green w-24">green</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-vividvoilet w-24">vividvoilet</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-purple w-24">purple</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-yellow w-24">yellow</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-lime w-24">lime</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-red w-24">red</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-volcano w-24">volcano</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-orange w-24">orange</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-gold w-24">gold</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-cyan w-24">cyan</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-teal w-24">teal</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-pink w-24">pink</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-brown w-24">brown</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-light w-24">light</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-dark w-24">dark</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-primary w-24">primary</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-secondary w-24">secondary</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-info w-24">info</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-warn w-24">warn</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-valid w-24">valid</button></div>
+          <div class="column w-24 w-12@sm w-8@md w-6@lg"><button style="padding: 25%;" class="btn is-sld is-box is-error w-24">error</button></div>
+        </div>
+      </main>
+
+      <main class="grid align-middle h-min-100vh" id="timeline">
+        <ul class="timeline list">
+          <li>
+            <h1>This is heading</h1>
+            <div><b>This is div</b></div>
+          </li>
+          <li>
+            <h3>This is heading</h3>
+            <div><b>This is div</b></div>
+            <div><b>This is div</b></div>
+            <div><b>This is div</b></div>
+          </li>
+          <li>
+            <h5>This is heading</h5>
+            <div><b>This is div</b></div>
+            <div><b>This is div</b></div>
+            <div><b>This is div</b></div>
+            <div><b>This is div</b></div>
+            <div><b>This is div</b></div>
+          </li>
+        </ul>
+      </main>
+    </div>
+
+    <aside class="lyt-sidebar fixed" id="sidebar">
+      <h3 class="ml-15 mb-15">Activity</h3>
+
+      <div class="container is-round-lg bg-light grid p-5">
+        <div class="column w-24 w-6@sm">
+          <button class="btn is-lg is-round is-sld is-error icon clr-white"><i class="fas fa-history"></i></button>
+        </div>
+        <div class="column flex justify-between is-y">
+          <div>volume</div>
+          <div class="brdr-b brdr-wide brdr-error is-pill"></div>
+        </div>
+      </div>
+
+      <div class="container is-round-lg bg-light grid p-5">
+        <div class="column w-24 w-6@sm">
+          <button class="btn is-lg is-round is-sld is-info icon clr-white"><i class="fas fa-history"></i></button>
+        </div>
+        <div class="column flex justify-between is-y">
+          <div>volume</div>
+          <div class="brdr-b brdr-wide brdr-info is-pill"></div>
+        </div>
+      </div>
+
+      <div class="container is-round-lg bg-dark grid p-5 clr-secondary">
+        <div class="flex justify-between w-24  align-middle">
+          <div>
+            <span class="icon">
+              <i class="far fa-chart-bar"></i>
+            </span>
+            <span class="clr-white">
+              market place
+            </span>
+          </div>
+          <div class="clr-secondary">
+            $USD <span class="icon"><i class="fas fa-caret-down"></i></span>
+          </div>
+        </div>
+
+        <div class="flex justify-between w-24 align-middle mt-5">
+          <h2 class="clr-white mb-0">24,605</h2>
+          <button class="btn is-sld is-info clr-white is-pill px-5"><b>Buy</b></button>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="column p-10 p-5@sm txt-center">
+          <img class="is-circle image my-30" src="https://i.pravatar.cc/64" alt="avatars" />
+          <div><b>Joseph</b></div>
+        </div>
+        <div class="column p-10 p-5@sm txt-center">
+          <img class="is-circle image my-30" src="https://i.pravatar.cc/64" alt="avatars" />
+          <div><b>Anthony</b></div>
+        </div>
+        <div class="column p-10 p-5@sm txt-center">
+          <img class="is-circle image my-30" src="https://i.pravatar.cc/64" alt="avatars" />
+          <div><b>Astrid</b></div>
+        </div>
+      </div>
+    </aside>
+    <div class="overlay"></div>
+
+    <footer class="lyt-footer">
+      <div class="grid">
+        <div class="column">
+          <h6 class="font-normal">
+            Lorem, ipsum Perferendis quam est, nisi sed fugiat quo explicabo temporibus modi culpa voluptates voluptate tempore ab assumenda et odit numquam in
+            laborum. Natus.
+          </h6>
+        </div>
+        <div class="column">
+          <h6 class="font-bold">
+            Lorem, ipsum Perferendis quam est, nisi sed fugiat quo explicabo temporibus modi culpa voluptates voluptate tempore ab assumenda et odit numquam in
+            laborum. Natus.
+          </h6>
+        </div>
+        <div class="column">
+          Lorem, ipsum Perferendis quam est, nisi sed fugiat quo explicabo temporibus modi culpa voluptates voluptate tempore ab assumenda et odit numquam in
+          laborum. Natus.
+        </div>
+        <div class="column">
+          Lorem, ipsum Perferendis quam est, nisi sed fugiat quo explicabo temporibus modi culpa voluptates voluptate tempore ab assumenda et odit numquam in
+          laborum. Natus.
+        </div>
+      </div>
+      <div>
+        <div>
+          <a href="https://pro.ant.design">Ant Design Pro</a>
+          <a href="https://github.com/ant-design/ant-design-pro">
+            <i class="icon anticon anticon-github">
+              <svg data-icon="github" viewBox="64 64 896 896" width="1em" height="1em" fill="currentColor" aria="true" focusable="false">
+                <path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9a127.5 127.5 0 0 1 38.1 91v112.5c.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"></path>
+              </svg>
+            </i>
+          </a>
+          <a href="https://ant.design">Ant Design</a>
+        </div>
+        <div>
+          Copyright
+          <span class="icon">
+            <svg data-icon="copyright" viewBox="64 64 896 896" width="1em" height="1em" fill="currentColor" aria="true" focusable="false">
+              <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372zm5.6-532.7c53 0 89 33.8 93 83.4.3 4.2 3.8 7.4 8 7.4h56.7c2.6 0 4.7-2.1 4.7-4.7 0-86.7-68.4-147.4-162.7-147.4C407.4 290 344 364.2 344 486.8v52.3C344 660.8 407.4 734 517.3 734c94 0 162.7-58.8 162.7-141.4 0-2.6-2.1-4.7-4.7-4.7h-56.8c-4.2 0-7.6 3.2-8 7.3-4.2 46.1-40.1 77.8-93 77.8-65.3 0-102.1-47.9-102.1-133.6v-52.6c.1-87 37-135.5 102.2-135.5z"></path>
+            </svg>
+          </span>
+          2019 蚂蚁金服体验技术部出品
+        </div>
+      </div>
+    </footer>
+
+    <script src="./jquery-3.3.1.min.js"></script>
+    <!-- <script src="./bootstrap.bundle.min.js"></script> -->
+    <script src="./custom.js"></script>
+    <!-- <script src="./test.js"></script> -->
+
+    <script>
+      $("a[href='#']").click(function (e) {
+        e.preventDefault();
+      });
+
+      $("[class*=trigger]").click(event => {
+        $(event.target).toggleClass("active");
+      });
+
+    </script>
+  </body>
+
+</html>

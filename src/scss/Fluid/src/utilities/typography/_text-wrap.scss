@@ -1,0 +1,17 @@
+//
+// Text wrap
+//
+
+@if $generate-utility-classes {
+  $config: (
+    properties: white-space,
+    selector: "txt",
+    values: (
+      wrap: normal,
+      nowrap: nowrap
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

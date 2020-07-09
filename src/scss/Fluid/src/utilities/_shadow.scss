@@ -1,0 +1,20 @@
+//
+// Shadow
+//
+
+@if $generate-utility-classes {
+  $config: (
+    properties: box-shadow,
+    selector: "shadow",
+    values: (
+      sm: $boxshadow-small,
+      null: $boxshadow-normal,
+      lg: $boxshadow-large,
+      round: $boxshadow-round,
+      none: none
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

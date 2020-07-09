@@ -1,0 +1,17 @@
+//
+// Basic Border
+//
+
+@if $generate-utility-classes {
+  $config: (
+    properties: border,
+    selector: "border",
+    values: (
+      null: $border-default,
+      none: 0
+    ),
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}

@@ -1,0 +1,14 @@
+//
+// Border-style
+//
+
+@if $generate-utility-classes {
+  $config: (
+    properties: border-style,
+    selector: "border",
+    values: dotted dashed solid double groove ridge inset outset,
+    enable-important-values: true
+  );
+
+  @include generate-style($config);
+}
